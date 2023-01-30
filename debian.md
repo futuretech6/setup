@@ -143,7 +143,7 @@ sudo systemctl enable clash@`whoami`
 
 `clash@.service`
 
-```toml
+```
 [Unit]
 Description=A rule based proxy in Go for %i.
 After=network.target
