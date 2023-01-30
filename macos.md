@@ -22,3 +22,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 vim ~/.zshrc # zsh-syntax-highlighting zsh-autosuggestions
 ```
+
+## Solidity
+
+```bash
+brew update
+brew upgrade
+brew tap ethereum/ethereum
+brew install solidity
+```
