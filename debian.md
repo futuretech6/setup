@@ -68,7 +68,7 @@ sudo usermod -aG docker $USER
 ```bash
 sudo apt-get install -y nodejs npm
 sudo npm install -g n
-n lts
+sudo n lts
 ```
 
 ## Solidity
