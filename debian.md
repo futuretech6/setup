@@ -4,6 +4,7 @@
 
 ```bash
 sudo apt-get update
+sudo apt-get install -y wget curl git vim
 
 # oh-my-zsh
 sudo apt-get install -y zsh
@@ -93,4 +94,66 @@ cd solidity
 mkdir build && cd build
 cmake .. -DUSE_Z3=OFF 
 make
+```
+
+## Microsoft
+
+```bash
+sudo apt-get install -y wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /etc/apt/keyrings/packages.microsoft.gpg
+
+# edge
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge.list'
+sudo apt-get update
+sudo apt-get install -y microsoft-edge-stable
+
+# vscode
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get update
+sudo apt-get install -y code
+```
+
+## Redis
+
+```bash
+sudo apt-get install -y lsb-release
+curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+sudo apt-get update
+sudo apt-get install -y redis
+```
+
+## Clash
+
+```bash
+sudo apt-get install -y wget gzip
+wget https://github.com/Dreamacro/clash/releases/download/v1.10.0/clash-linux-amd64-v1.10.0.gz
+gunzip clash-linux-amd64-v1.10.0.gz
+mkdir -p ~/App/clash
+mv clash-linux-amd64-v1.10.0 ~/App/clash/clash
+chmod +x ~/App/clash/clash
+wget https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb -O ~/App/clash/Country.mmdb
+# wget https://cdn.jsdelivr.net/gh/Dreamacro/maxmind-geoip@release/Country.mmdb -O ~/App/clash/Country.mmdb
+~/App/clash/clash -f ~/App/clash/glados.yaml -d ~/App/clash
+
+# [optional]
+sudo vim /lib/systemd/system/clash@.service
+sudo systemctl enable clash@`whoami`
+```
+
+`clash@.service`
+
+```toml
+[Unit]
+Description=A rule based proxy in Go for %i.
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+Restart=on-abort
+ExecStart=/home/%i/App/clash/clash -f /home/%i/App/clash/glados.yaml -d /home/%i/App/clash
+
+[Install]
+WantedBy=multi-user.target
 ```
