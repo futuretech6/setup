@@ -80,8 +80,8 @@ brew install --cask docker  # VirtualBox is not supported on Apple silicon, so d
 ## NodeJs
 
 ```bash
-brew install node@16 npm
-# sudo npm install -g n
+brew install npm  # will also install node
+# npm install -g n
 # sudo n lts
 ```
 
