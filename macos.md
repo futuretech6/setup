@@ -35,7 +35,8 @@ vim ~/.zshrc # zsh-syntax-highlighting zsh-autosuggestions
 ## Rust
 
 ```bash
-brew install rust
+# disable confirmation prompt
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # [optional]
 cargo install gitui bottom bat
