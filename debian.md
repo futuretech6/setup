@@ -24,6 +24,18 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 cargo install gitui bottom bat
 ```
 
+`vim ~/.cargo/config.toml`
+
+```toml
+[source]
+
+[source.sjtu]
+registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"
+
+[source.crates-io]
+replace-with = "sjtu"
+```
+
 ## LLVM
 
 ```bash
