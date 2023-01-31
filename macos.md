@@ -32,6 +32,39 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 vim ~/.zshrc # zsh-syntax-highlighting zsh-autosuggestions
 ```
 
+## Rust
+
+```bash
+brew install rust
+
+# [optional]
+cargo install gitui bottom bat
+```
+
+## LLVM
+
+```bash
+LLVM_VERSION=
+brew install llvm@$LLVM_VERSION
+
+# [optional]
+brew install clang-format@$LLVM_VERSION
+```
+
+## Docker
+
+```bash
+brew install --cask docker  # VirtualBox is not supported on Apple silicon, so docker-machine can't be used
+```
+
+## NodeJs
+
+```bash
+brew install node@16 npm
+# sudo npm install -g n
+# sudo n lts
+```
+
 ## Solidity
 
 ```bash
@@ -39,4 +72,24 @@ brew update
 brew upgrade
 brew tap ethereum/ethereum
 brew install solidity
+```
+
+## Microsoft
+
+```bash
+brew install --cask microsoft-edge
+brew install --cask visual-studio-code
+brew install --cask onedrive
+```
+
+## Redis
+
+```bash
+
+```
+
+## Clash
+
+```bash
+brew install --cask clashx
 ```
