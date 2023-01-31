@@ -27,13 +27,21 @@ cargo install gitui bottom bat
 `vim ~/.cargo/config.toml`
 
 ```toml
-[source]
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = 'ustc'
+
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 
 [source.sjtu]
 registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"
 
-[source.crates-io]
-replace-with = "sjtu"
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+
+[source.rustcc]
+registry = "https://code.aliyun.com/rustcc/crates.io-index.git"
 ```
 
 ## LLVM
