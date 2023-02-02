@@ -21,7 +21,7 @@ vim ~/.zshrc # zsh-syntax-highlighting zsh-autosuggestions
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # [optional]
-cargo install gitui bottom bat
+cargo install gitui bottom bat  # needs cc, make, pkg-config, libssl-dev
 ```
 
 `vim ~/.cargo/config.toml`
