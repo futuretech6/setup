@@ -49,6 +49,7 @@ registry = "https://code.aliyun.com/rustcc/crates.io-index.git"
 ```bash
 LLVM_VERSION=
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)" $LLVM_VERSION
+echo 'export CC=`which clang-$LLVM_VERSION` ; export CXX=`which clang++-$LLVM_VERSION`' >> ~/.profile
 
 # [optional]
 sudo apt-get install -y clangd-$LLVM_VERSION clang-format-$LLVM_VERSION clang-tidy-$LLVM_VERSION
