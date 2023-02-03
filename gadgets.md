@@ -40,5 +40,5 @@ brew install thefuck
 
 # post-installation
 echo 'eval $(thefuck --alias fuck)' >> ~/.zshrc
-vim ~/.config/thefuck/settings.py
+echo "excluded_search_path_prefixes = ['/mnt/']" >> ~/.config/thefuck/settings.py  # WSL only
 ```
