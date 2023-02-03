@@ -40,4 +40,5 @@ brew install thefuck
 
 # post-installation
 echo 'eval $(thefuck --alias fuck)' >> ~/.zshrc
+vim ~/.config/thefuck/settings.py
 ```
