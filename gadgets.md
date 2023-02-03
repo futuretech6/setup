@@ -26,3 +26,18 @@ cd ~/Git/autojump
 # macOS
 brew install autojump
 ```
+
+## The Fuck
+
+[nvbn/thefuck: Magnificent app which corrects your previous console command](https://github.com/nvbn/thefuck)
+
+```bash
+# Ubuntu
+sudo apt install thefuck
+
+# macOS
+brew install thefuck
+
+# post-installation
+echo 'eval $(thefuck --alias fuck)' >> ~/.zshrc
+```
