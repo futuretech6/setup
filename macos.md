@@ -94,14 +94,18 @@ brew install go
 echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.zprofile
 ```
 
-## Conda
+## Python
 
 ```bash
+# python binary path
+echo 'export PATH="`python3 -m site --user-base`/bin:$PATH"' >> ~/.zprofile
+
+# conda
 brew install --cask anaconda
 /opt/homebrew/anaconda3/bin/conda init zsh
 conda config --set auto_activate_base false
 
-# [optional]
+# [optional] conda mirror
 conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
 conda config --set show_channel_urls yes
