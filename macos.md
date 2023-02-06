@@ -85,6 +85,15 @@ brew install npm  # will also install node
 # sudo n lts
 ```
 
+## Go
+
+```bash
+brew install go
+
+# [optional]
+echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.zprofile
+```
+
 ## Solidity
 
 ```bash
