@@ -99,6 +99,7 @@ echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.zprofile
 ```bash
 brew install --cask anaconda
 /opt/homebrew/anaconda3/bin/conda init zsh
+conda config --set auto_activate_base false
 
 # [optional]
 conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
