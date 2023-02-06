@@ -88,10 +88,9 @@ brew install npm  # will also install node
 ## Solidity
 
 ```bash
-brew update
-brew upgrade
-brew tap ethereum/ethereum
-brew install solidity
+pip3 install solc-select
+solc-select install all
+solc-select use $VERSION
 ```
 
 ## Microsoft

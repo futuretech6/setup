@@ -96,26 +96,10 @@ hash -r
 
 ## Solidity
 
-Use PPA
-
 ```bash
-sudo add-apt-repository -y ppa:ethereum/ethereum
-sudo apt-get update
-sudo apt-get install -y solc
-```
-
-Build from source
-
-```bash
-sudo apt-get install -y cmake libboost-all-dev git
-# sudo apt-get install -y libz3-dev
-git clone --recursive git@github.com:ethereum/solidity.git
-cd solidity
-# export CC=`which clang-15` ; export CXX=`which clang++-15`
-# unset CC CXX
-mkdir build && cd build
-cmake .. -DUSE_Z3=OFF 
-make
+pip3 install solc-select
+solc-select install all
+solc-select use $VERSION
 ```
 
 ## Microsoft
