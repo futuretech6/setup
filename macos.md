@@ -94,6 +94,18 @@ brew install go
 echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.zprofile
 ```
 
+## Conda
+
+```bash
+brew install --cask anaconda
+/opt/homebrew/anaconda3/bin/conda init zsh
+
+# [optional]
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+```
+
 ## Solidity
 
 ```bash
