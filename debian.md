@@ -94,6 +94,20 @@ sudo n lts
 hash -r
 ```
 
+## Python
+
+```bash
+# conda mirror https://mirrors.bfsu.edu.cn/anaconda/archive/?C=M&O=D
+wget ...
+bash ...
+conda config --set auto_activate_base false
+
+# [optional] conda mirror
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+```
+
 ## Solidity
 
 ```bash
