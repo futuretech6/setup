@@ -94,6 +94,15 @@ sudo n lts
 hash -r
 ```
 
+## Go
+
+```bash
+sudo apt-get install -y golang
+
+# [optional]
+echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.profile
+```
+
 ## Python
 
 ```bash
