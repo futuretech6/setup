@@ -106,6 +106,9 @@ echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.profile
 ## Python
 
 ```bash
+# [optional] pypi mirror
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple  # needs pip >=10.0.0
+
 # conda mirror https://mirrors.bfsu.edu.cn/anaconda/archive/?C=M&O=D
 wget ...
 bash ...

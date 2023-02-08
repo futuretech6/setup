@@ -100,6 +100,9 @@ echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.zprofile
 # python binary path
 echo 'export PATH="`python3 -m site --user-base`/bin:$PATH"' >> ~/.zprofile
 
+# [optional] pypi mirror
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple  # needs pip >=10.0.0
+
 # conda
 brew install --cask anaconda
 /opt/homebrew/anaconda3/bin/conda init zsh
