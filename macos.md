@@ -97,6 +97,9 @@ echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.zprofile
 ## Python
 
 ```bash
+# install homebrew version (some packages may require newest python version as dep, which will overwrite `/usr/bin/python3`)
+brew install python3  # pip3 included
+
 # python binary path
 echo 'export PATH="`python3 -m site --user-base`/bin:$PATH"' >> ~/.zprofile
 
