@@ -190,3 +190,10 @@ ExecStart=/home/%i/App/clash/clash -f /home/%i/App/clash/glados.yaml -d /home/%i
 [Install]
 WantedBy=multi-user.target
 ```
+
+## CUDA
+
+```bash
+# WSL2
+echo "export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH" >> ~/.profile
+```
