@@ -1,5 +1,15 @@
 # Gadgets
 
+## gitui
+
+For SSH remote
+
+```bash
+# echo "eval \`ssh-agent -s\`; ssh-add" >> ~/.profile
+eval `ssh-agent -s`                                              
+ssh-add
+```
+
 ## bk
 
 [aeosynth/bk: Terminal Epub reader](https://github.com/aeosynth/bk)
