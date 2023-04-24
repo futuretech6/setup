@@ -101,7 +101,12 @@ hash -r
 ## Go
 
 ```bash
+# from pkg
 sudo apt-get install -y golang
+# from binary (https://go.dev/dl/)
+wget https://go.dev/dl/go1.20.3.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
 
 # [optional]
 echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.profile
@@ -163,15 +168,19 @@ sudo service redis-server start  # wsl
 ## Clash
 
 ```bash
+# from github release
 sudo apt-get install -y wget gzip
 wget https://github.com/Dreamacro/clash/releases/download/v1.10.0/clash-linux-amd64-v1.10.0.gz
 gunzip clash-linux-amd64-v1.10.0.gz
 mkdir -p ~/App/clash
 mv clash-linux-amd64-v1.10.0 ~/App/clash/clash
 chmod +x ~/App/clash/clash
+# from gopkg
+go install github.com/Dreamacro/clash@latest
+
 wget https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb -O ~/App/clash/Country.mmdb
 # wget https://cdn.jsdelivr.net/gh/Dreamacro/maxmind-geoip@release/Country.mmdb -O ~/App/clash/Country.mmdb
-~/App/clash/clash -f ~/App/clash/glados.yaml -d ~/App/clash
+~/App/clash/clash -f ~/App/clash/config.yaml -d ~/App/clash
 
 # [optional]
 sudo vim /lib/systemd/system/clash@.service
@@ -189,7 +198,7 @@ After=network.target
 Type=simple
 User=%i
 Restart=on-abort
-ExecStart=/home/%i/App/clash/clash -f /home/%i/App/clash/glados.yaml -d /home/%i/App/clash
+ExecStart=/home/%i/App/clash/clash -f /home/%i/App/clash/config.yaml -d /home/%i/App/clash
 
 [Install]
 WantedBy=multi-user.target
