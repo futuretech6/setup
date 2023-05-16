@@ -30,23 +30,7 @@ cargo install gitui bottom bat erdtree  # needs cc, make, pkg-config, libssl-dev
 
 `vim ~/.cargo/config.toml`
 
-```toml
-[source.crates-io]
-registry = "https://github.com/rust-lang/crates.io-index"
-replace-with = 'ustc'
-
-[source.ustc]
-registry = "git://mirrors.ustc.edu.cn/crates.io-index"
-
-[source.sjtu]
-registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"
-
-[source.tuna]
-registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
-
-[source.rustcc]
-registry = "https://code.aliyun.com/rustcc/crates.io-index.git"
-```
+https://github.com/futuretech6/dotfiles/blob/master/rust/config.toml
 
 ## LLVM
 
