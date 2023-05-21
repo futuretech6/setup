@@ -80,6 +80,13 @@ sudo apt-get install -y npm
 sudo npm install -g n
 sudo n lts
 hash -r
+
+# yarn (https://yarnpkg.com/getting-started/install)
+corepack enable    # Node.js >=16.10
+npm i -g corepack  # Node.js <16.10
+corepack prepare yarn@stable --activate  # Node.js ^16.17 or >=18.6
+## [optional]
+yarn set version 1.22.19
 ```
 
 ## Go
