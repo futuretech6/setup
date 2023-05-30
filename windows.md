@@ -25,6 +25,8 @@ iwr -useb https://christitus.com/win | iex
 
 ## tools
 
+Portable apps will be installed in `%localappdata%\Microsoft\WinGet\Packages`.
+
 ```powershell
 winget install vscode --id=Microsoft.VisualStudioCode
 winget install "Windows Terminal" --id=9N0DX20HK701
