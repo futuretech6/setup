@@ -26,11 +26,11 @@ iwr -useb https://christitus.com/win | iex
 ## tools
 
 ```powershell
-winget install Microsoft.VisualStudioCode
-winget install Microsoft.WindowsTerminal
-winget install SublimeHQ.SublimeText.4
-winget install Git.MinGit
-winget install GyDi.ClashVerge
+winget install vscode --id=Microsoft.VisualStudioCode
+winget install "Windows Terminal" --id=9N0DX20HK701
+winget install --id=SublimeHQ.SublimeText.4
+winget install --id=Git.MinGit
+winget install --id=GyDi.ClashVerge
 winget install quicklook --id=9NV4BS3L1H4S
 winget install powertoys --id=XP89DCGQ3K6VLD
 winget install JavadMotallebi.NeatDownloadManager
