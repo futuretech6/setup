@@ -29,11 +29,14 @@ iwr -useb https://christitus.com/win | iex
 winget install Microsoft.VisualStudioCode
 winget install Microsoft.WindowsTerminal
 winget install SublimeHQ.SublimeText.4
-winget install GyDi.ClashVerge
 winget install Git.MinGit
+winget install GyDi.ClashVerge
+winget install quicklook --id=9NV4BS3L1H4S
+winget install powertoys --id=XP89DCGQ3K6VLD
+winget install JavadMotallebi.NeatDownloadManager
 
 # Administrator
-choco install miniconda3
+choco install miniconda3 --params="/InstallationType=JustMe /AddToPath=1 /RegisterPython=1"  # AddToPath only works for JustMe
 choco install rust
 choco install llvm
 ```
