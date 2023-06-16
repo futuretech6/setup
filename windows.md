@@ -36,6 +36,7 @@ winget install --id=GyDi.ClashVerge
 winget install quicklook --id=9NV4BS3L1H4S
 winget install powertoys --id=XP89DCGQ3K6VLD
 winget install JavadMotallebi.NeatDownloadManager
+winget install --id=Daum.PotPlayer
 
 # Administrator
 choco install miniconda3 --params="/InstallationType=JustMe /AddToPath=1 /RegisterPython=1"  # AddToPath only works for JustMe
