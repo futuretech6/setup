@@ -70,6 +70,7 @@ config:
 
 dynamic_chain
 proxy_dns
+quiet_mode
 
 [ProxyList]
 socks5 127.0.0.1 7890
