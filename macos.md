@@ -107,8 +107,12 @@ echo 'export PATH="`python3 -m site --user-base`/bin:$PATH"' >> ~/.zprofile
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple  # needs pip >=10.0.0
 
 # conda
-brew install --cask anaconda
-/opt/homebrew/anaconda3/bin/conda init zsh
+mkdir -p ~/.miniconda3
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -o ~/.miniconda3/miniconda.sh
+bash ~/.miniconda3/miniconda.sh -b -u -p ~/.miniconda3
+rm -rf ~/.miniconda3/miniconda.sh
+~/.miniconda3/bin/conda init zsh
+
 conda config --set auto_activate_base false
 
 # [optional] conda mirror
