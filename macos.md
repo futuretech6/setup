@@ -137,6 +137,16 @@ brew install --cask visual-studio-code
 brew install --cask onedrive
 ```
 
+## LaTeX
+
+```bash
+brew install --cask mactex
+
+# for latexindet.pl (https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#mac)
+brew install perl cpanm
+cpanm YAML::Tiny File::HomeDir
+```
+
 ## Redis
 
 ```bash
