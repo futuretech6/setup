@@ -140,7 +140,7 @@ brew install --cask onedrive
 ## LaTeX
 
 ```bash
-brew install --cask mactex
+brew install --cask mactex-no-gui
 
 # for latexindet.pl (https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#mac)
 brew install perl cpanm
