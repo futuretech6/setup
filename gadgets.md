@@ -62,17 +62,4 @@ sudo apt install proxychains4
 
 config:
 
-```ini
-# For wsl2, add the following lines to ~/.profile
-#
-# hostip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
-# sed -i -E "s/([0-9]{1,3}\.){3}[0-9]{1,3}/$hostip/g" ~/.proxychains/proxychains.conf
-
-dynamic_chain
-proxy_dns
-quiet_mode
-
-[ProxyList]
-socks5 127.0.0.1 7890
-http 127.0.0.1 7890
-```
+https://github.com/futuretech6/dotfiles/blob/master/proxychains/proxychains.conf
