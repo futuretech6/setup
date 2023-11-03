@@ -22,8 +22,10 @@ sudo update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
 ## Rust
 
 ```bash
-# disable confirmation prompt
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+# RUSTUP_UNPACK_RAM=200000000
+# RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+# RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y  # disable confirmation prompt
 
 # [optional]
 cargo install gitui bottom bat erdtree  # needs cc, make, pkg-config, libssl-dev
