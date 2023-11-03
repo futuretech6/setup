@@ -130,6 +130,9 @@ conda config --set auto_activate_base false
 conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
 conda config --set show_channel_urls yes
+
+# [optional] debian global pip
+echo "[global]\nbreak-system-packages = true" > ~/.config/pip/pip.conf
 ```
 
 ## Solidity
