@@ -63,3 +63,10 @@ sudo apt install proxychains4
 config:
 
 https://github.com/futuretech6/dotfiles/blob/master/proxychains/proxychains.conf
+
+# [inshellisense](https://github.com/microsoft/inshellisense)
+
+```bash
+npm install -g @microsoft/inshellisense
+inshellisense bind
+```
