@@ -138,6 +138,10 @@ conda config --set show_channel_urls yes
 
 # [optional] debian global pip
 echo "[global]\nbreak-system-packages = true" > ~/.config/pip/pip.conf
+
+# pipx
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
 ```
 
 ## Solidity
