@@ -70,3 +70,12 @@ https://github.com/futuretech6/dotfiles/blob/master/proxychains/proxychains.conf
 npm install -g @microsoft/inshellisense
 inshellisense bind
 ```
+# [Pandoc](https://github.com/jgm/pandoc)
+
+```bash
+sudo apt-get install -y pandoc
+
+brew install pandoc
+
+docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex README.md -o README.pdf
+```
