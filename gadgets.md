@@ -79,3 +79,9 @@ brew install pandoc
 
 docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex README.md -o README.pdf
 ```
+
+# [OneDrive](https://github.com/abraunegg/onedrive)
+
+https://github.com/abraunegg/onedrive#documentation-and-configuration-assistance
+- https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md
+- https://github.com/abraunegg/onedrive/blob/master/docs/Docker.md
