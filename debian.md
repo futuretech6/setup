@@ -84,10 +84,10 @@ sudo usermod -aG docker $USER
 ## NodeJs
 
 ```bash
-sudo apt-get install -y npm
-sudo npm install -g n
-sudo n lts
-hash -r
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+source ~/.zshrc
+nvm install --lts
+nvm use --lts
 
 # yarn (https://yarnpkg.com/getting-started/install)
 corepack enable    # Node.js >=16.10
