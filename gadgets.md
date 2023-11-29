@@ -48,6 +48,9 @@ sudo apt install thefuck
 # macOS
 brew install thefuck
 
+# pip
+pipx install thefuck
+
 # post-installation
 echo 'eval $(thefuck --alias fuck)' >> ~/.zshrc
 echo "excluded_search_path_prefixes = ['/mnt/']" >> ~/.config/thefuck/settings.py  # WSL only
