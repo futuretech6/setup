@@ -81,8 +81,16 @@ brew install --cask docker  # VirtualBox is not supported on Apple silicon, so d
 
 ```bash
 brew install npm  # will also install node
-# npm install -g n
-# sudo n lts
+
+# use nvm https://github.com/nvm-sh/nvm#install--update-script
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+source ~/.zshrc
+nvm install --lts
+nvm use --lts
+
+# [optional]
+nvm install 16
+nvm use 16
 ```
 
 ## Go
