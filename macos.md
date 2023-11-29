@@ -120,7 +120,7 @@ conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
 conda config --set show_channel_urls yes
 
-# pipx
+# [pipx](https://github.com/pypa/pipx)
 brew install pipx
 pipx ensurepath
 ```
@@ -128,7 +128,7 @@ pipx ensurepath
 ## Solidity
 
 ```bash
-pip3 install solc-select
+pipx install solc-select
 solc-select install all
 solc-select use $VERSION
 ```
