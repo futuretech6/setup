@@ -139,7 +139,7 @@ conda config --set show_channel_urls yes
 # [optional] debian global pip
 echo "[global]\nbreak-system-packages = true" > ~/.config/pip/pip.conf
 
-# pipx
+# https://github.com/pypa/pipx
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 ```
@@ -147,7 +147,7 @@ python3 -m pipx ensurepath
 ## Solidity
 
 ```bash
-pip3 install solc-select
+pipx install solc-select
 solc-select install all
 solc-select use $VERSION
 ```
