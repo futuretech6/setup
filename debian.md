@@ -137,7 +137,7 @@ conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
 conda config --set show_channel_urls yes
 
 # [optional] debian global pip
-echo "[global]\nbreak-system-packages = true" > ~/.config/pip/pip.conf
+pip config set global.break-system-packages true
 
 # https://github.com/pypa/pipx
 python3 -m pip install --user pipx
