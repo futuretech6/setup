@@ -161,12 +161,12 @@ sudo apt-get install -y wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /etc/apt/keyrings/packages.microsoft.gpg
 
 # edge
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge.list'
+sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge.list'
 sudo apt-get update
 sudo apt-get install -y microsoft-edge-stable
 
 # vscode
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt-get update
 sudo apt-get install -y code
 ```
@@ -239,9 +239,9 @@ echo 'Acquire::https::Proxy "http://username:password@127.0.0.1:7890/";' | sudo 
 ```
 
 ```bash
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+sudo curl -fsSLo /etc/apt/keyrings/brave-browser-archive-keyring.gpg \
   https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" \
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" \
   | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
 sudo apt-get update
