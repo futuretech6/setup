@@ -31,7 +31,7 @@ sudo update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y  # disable confirmation prompt
 
 # [optional]
-cargo install gitui bottom bat erdtree  # needs cc, make, pkg-config, libssl-dev
+cargo install gitui bottom bat erdtree mdcat  # needs cc, make, pkg-config, libssl-dev
 ```
 
 `vim ~/.cargo/config.toml`
