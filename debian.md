@@ -91,6 +91,8 @@ source ~/.zshrc
 nvm install --lts
 nvm use --lts
 
+npm config set registry https://registry.npmmirror.com
+
 # yarn (https://yarnpkg.com/getting-started/install)
 corepack enable    # Node.js >=16.10
 npm i -g corepack  # Node.js <16.10
