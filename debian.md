@@ -22,6 +22,12 @@ locale-gen zh_CN.UTF-8
 sudo update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
 ```
 
+## Flatpak
+
+```bash
+sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+```
+
 ## Rust
 
 ```bash
