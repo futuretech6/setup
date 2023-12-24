@@ -61,19 +61,20 @@ echo "excluded_search_path_prefixes = ['/mnt/']" >> ~/.config/thefuck/settings.p
 ```bash
 brew install proxychains-ng
 sudo apt install proxychains4
+sudo dnf install proxychains-ng
 ```
 
 config:
 
 https://github.com/futuretech6/dotfiles/blob/master/proxychains/proxychains.conf
 
-# [inshellisense](https://github.com/microsoft/inshellisense)
+## [inshellisense](https://github.com/microsoft/inshellisense)
 
 ```bash
 npm install -g @microsoft/inshellisense
 inshellisense bind
 ```
-# [Pandoc](https://github.com/jgm/pandoc)
+## [Pandoc](https://github.com/jgm/pandoc)
 
 ```bash
 sudo apt-get install -y pandoc
@@ -83,7 +84,7 @@ brew install pandoc
 docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex README.md -o README.pdf
 ```
 
-# [OneDrive](https://github.com/abraunegg/onedrive)
+## [OneDrive](https://github.com/abraunegg/onedrive)
 
 https://github.com/abraunegg/onedrive#documentation-and-configuration-assistance
 - https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md
