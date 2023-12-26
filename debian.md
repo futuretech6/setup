@@ -85,9 +85,9 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
-[Tuna](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/)
+Docker CE mirrors: [Tuna](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/), [USTC](https://mirrors.ustc.edu.cn/help/docker-ce.html)
 
-[USTC](https://mirrors.ustc.edu.cn/help/docker-ce.html)
+Docker Registry: [Docker Proxy](https://dockerproxy.com/docs)
 
 ## NodeJs
 
