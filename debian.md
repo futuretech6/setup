@@ -85,7 +85,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # registry
-echo '{ "registry-mirrors": [ "https://dockerproxy.com" ] }' > ~/.docker/daemon.json
+echo '{ "registry-mirrors": [ "https://dockerproxy.com" ] }' | sudo tee /etc/docker/daemon.json
 ```
 
 Docker CE mirrors: [Tuna](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/), [USTC](https://mirrors.ustc.edu.cn/help/docker-ce.html)
