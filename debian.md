@@ -258,3 +258,11 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/brave-b
 sudo apt-get update
 sudo apt-get install -y brave-browser
 ```
+
+## Qemu
+
+https://wiki.debian.org/QEMU
+
+```bash
+sudo apt install qemu-system
+```
