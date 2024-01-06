@@ -274,5 +274,5 @@ sudo apt install qemu-system
 ```bash
 sudo apt-get install -y fcitx-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
-  | bash -s -- "iDvel/rime-ice:others/recipes/full"
+  | rime_frontend=fcitx-rime bash -s -- "iDvel/rime-ice:others/recipes/full"
 ```
