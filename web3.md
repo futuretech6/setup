@@ -1,6 +1,4 @@
-# Anchor
-
-## Version
+## Anchor
 
 ```bash
 # rustup default 1.60
@@ -15,4 +13,11 @@ avm install latest
 avm use latest
 # avm install 0.27.0
 # avm use 0.27.0
+```
+
+## [Foundry](https://github.com/foundry-rs/foundry)
+
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
 ```
