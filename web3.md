@@ -18,6 +18,12 @@ avm use latest
 # avm use 0.27.0
 ```
 
+`anchor build` error: `error: not a directory: '~/.local/share/solana/install/releases/stable/solana-release/bin/sdk/sbf/dependencies/platform-tools/rust/lib'`
+
+```bash
+rm -rf ~/.cache/solana
+```
+
 ## [Foundry](https://github.com/foundry-rs/foundry)
 
 ```bash
