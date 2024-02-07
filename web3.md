@@ -7,6 +7,9 @@
 sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
 # solana-install init 1.14.16
 
+# yarn
+corepack enable
+
 # anchor (latest anchor may not be compatible with stable solana)
 cargo install --git https://github.com/project-serum/anchor avm --locked --force
 avm install latest
