@@ -40,3 +40,11 @@ sudo ln -s /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/con
   </alias>
 </fontconfig>
 ```
+
+## Chromium
+
+```bash
+sudo apt install chromium --target-release=stable  # debian instead of mint
+sudo apt-mark hold chromium
+sudo apt-mark unhold chromium
+```
