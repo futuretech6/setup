@@ -245,15 +245,17 @@ WantedBy=multi-user.target
 echo "export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH" >> ~/.profile
 ```
 
-## Brave
-
-https://brave.com/linux/#debian-ubuntu-mint
+## Browser
 
 ```bash
 # set proxy for apt
 echo 'Acquire::http::Proxy "http://username:password@127.0.0.1:7890/";' | sudo tee -a /etc/apt/apt.conf
 echo 'Acquire::https::Proxy "http://username:password@127.0.0.1:7890/";' | sudo tee -a /etc/apt/apt.conf 
 ```
+
+**Brave**
+
+https://brave.com/linux/#debian-ubuntu-mint
 
 ```bash
 sudo curl -fsSLo /etc/apt/keyrings/brave-browser-archive-keyring.gpg \
@@ -263,6 +265,16 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/brave-b
 
 sudo apt-get update
 sudo apt-get install -y brave-browser
+```
+
+**Vivaldi**
+
+```bash
+echo "deb [arch=$(dpkg --print-architecture)] https://repo.vivaldi.com/stable/deb stable main" \
+  | sudo tee /etc/apt/sources.list.d/vivaldi-browser-release.list
+
+sudo apt-get update
+sudo apt-get install -y vivaldi-stable
 ```
 
 ## Qemu
