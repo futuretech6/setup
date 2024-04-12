@@ -253,15 +253,27 @@ echo 'Acquire::http::Proxy "http://username:password@127.0.0.1:7890/";' | sudo t
 echo 'Acquire::https::Proxy "http://username:password@127.0.0.1:7890/";' | sudo tee -a /etc/apt/apt.conf 
 ```
 
+**Chrome**
+
+https://www.google.com/linuxrepositories
+
+```bash
+proxychains wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/google.gpg >/dev/null
+echo "deb [arch=$(dpkg --print-architecture)] http://dl.google.com/linux/chrome/deb/ stable main" \
+  | sudo tee /etc/apt/sources.list.d/chrome-browser.list
+
+sudo apt-get update
+sudo apt-get install -y google-chrome-stable
+```
+
 **Brave**
 
 https://brave.com/linux/#debian-ubuntu-mint
 
 ```bash
-sudo curl -fsSLo /etc/apt/keyrings/brave-browser-archive-keyring.gpg \
-  https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+proxychains wget -q -O - https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg | sudo tee /etc/apt/keyrings/brave.gpg >/dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" \
-  | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+  | sudo tee /etc/apt/sources.list.d/brave-browser.list
 
 sudo apt-get update
 sudo apt-get install -y brave-browser
@@ -270,8 +282,9 @@ sudo apt-get install -y brave-browser
 **Vivaldi**
 
 ```bash
-echo "deb [arch=$(dpkg --print-architecture)] https://repo.vivaldi.com/stable/deb stable main" \
-  | sudo tee /etc/apt/sources.list.d/vivaldi-browser-release.list
+proxychains wget -q -O - https://repo.vivaldi.com/stable/linux_signing_key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/vivaldi.gpg >/dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/vivaldi.gpg] https://repo.vivaldi.com/stable/deb stable main" \
+  | sudo tee /etc/apt/sources.list.d/vivaldi-browser.list
 
 sudo apt-get update
 sudo apt-get install -y vivaldi-stable
