@@ -95,5 +95,6 @@ https://github.com/abraunegg/onedrive#documentation-and-configuration-assistance
 https://hub.docker.com/r/marpteam/marp-cli/
 
 ```bash
+chmod -R 777 $PWD
 docker run --rm --init -v $PWD:/home/marp/app -e LANG=$LANG -p 8080:8080 -p 37717:37717 marpteam/marp-cli -s .
 ```
