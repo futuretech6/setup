@@ -25,7 +25,7 @@ sudo sysctl vm.swappiness=10
 cat /proc/sys/vm/swappiness
 ```
 
-# nginx certificates
+## nginx certificates
 
 ```bash
 unzip *.zip -d certificates
