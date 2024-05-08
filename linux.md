@@ -28,7 +28,11 @@ cat /proc/sys/vm/swappiness
 ## nginx certificates
 
 ```bash
-unzip *.zip -d certificates
+# ZeroSSL verify (using apache)
+scp xxx.txt server:/var/www/html/.well-known/pki-validation/
+
+# ZeroSSL certificates installation
+unzip example.com.zip -d certificates
 cat certificates/certificate.crt certificates/ca_bundle.crt | sudo tee /etc/ssl/certificate.crt.merge > /dev/null
 sudo cp certificates/private.key /etc/ssl/private/private.key
 rm -rf certificates/
