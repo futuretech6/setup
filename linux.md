@@ -24,3 +24,12 @@ sudo ehco "/swapfile none swap sw 0 0" >> /etc/fstab
 sudo sysctl vm.swappiness=10
 cat /proc/sys/vm/swappiness
 ```
+
+# nginx certificates
+
+```bash
+unzip *.zip -d certificates
+cat certificates/certificate.crt certificates/ca_bundle.crt | sudo tee /etc/ssl/certificate.crt.merge > /dev/null
+sudo cp certificates/private.key /etc/ssl/private/private.key
+rm -rf certificates/
+```
