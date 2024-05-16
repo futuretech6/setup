@@ -96,5 +96,14 @@ https://hub.docker.com/r/marpteam/marp-cli/
 
 ```bash
 chmod -R 777 $PWD
+
+# server mode
 docker run --rm --init -v $PWD:/home/marp/app -e LANG=$LANG -p 8080:8080 -p 37717:37717 marpteam/marp-cli -s .
+
+# convert to html
+docker run --rm -v $PWD:/home/marp/app/ -e LANG=$LANG marpteam/marp-cli slide-deck.md --allow-local-files
+# convert to pdf
+docker run --rm --init -v $PWD:/home/marp/app/ -e LANG=$LANG marpteam/marp-cli slide-deck.md --pdf --allow-local-files
+# convert to pptx
+docker run --rm --init -v $PWD:/home/marp/app/ -e LANG=$LANG marpteam/marp-cli slide-deck.md --pptx --allow-local-files
 ```
