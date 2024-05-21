@@ -77,6 +77,8 @@ brew install clang-format@$LLVM_VERSION
 brew install --cask docker  # VirtualBox is not supported on Apple silicon, so docker-machine can't be used
 ```
 
+[Colima](https://github.com/abiosoft/colima)
+
 ## NodeJs
 
 ```bash
