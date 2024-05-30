@@ -146,6 +146,11 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 bash ~/.miniconda3/miniconda.sh -b -u -p ~/.miniconda3
 rm -rf ~/.miniconda3/miniconda.sh
 
+# miniforge
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh
+rm -f Miniforge3-$(uname)-$(uname -m).sh
+
 # conda config
 ~/.miniconda3/bin/conda init zsh
 conda config --set auto_activate_base false
