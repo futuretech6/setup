@@ -160,6 +160,9 @@ conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
 conda config --set show_channel_urls yes
 
+# mamba
+"${SHELL}" <(curl -L micro.mamba.pm/install.sh)
+
 # [optional] debian global pip
 pip config set global.break-system-packages true
 
