@@ -85,7 +85,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # registry
-echo '{ "registry-mirrors": [ "https://dockerproxy.com" ] }' | sudo tee /etc/docker/daemon.json
+echo '{ "registry-mirrors": [ "https://docker.kubesre.xyz" ] }' | sudo tee /etc/docker/daemon.json
 
 # proxy: sudo vim /lib/systemd/system/docker.service
 [Service]
@@ -96,7 +96,7 @@ Environment="NO_PROXY=localhost,127.0.0.1"
 
 Docker CE mirrors: [Tuna](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/), [USTC](https://mirrors.ustc.edu.cn/help/docker-ce.html)
 
-Docker Registry: [Docker Proxy](https://dockerproxy.com/docs)
+Docker Registry: [Docker Proxy](https://dockerproxy.com/docs), [kubesre/docker-registry-mirrors](https://github.com/kubesre/docker-registry-mirrors)
 
 ## NodeJs
 
