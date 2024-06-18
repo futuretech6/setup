@@ -13,7 +13,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ```powershell
 # Non-Administrator
-irm https://massgrave.dev/get | iex
+irm https://massgrave.dev/get | iex  # deprecated
+irm https://get.activated.win | iex
 ```
 
 ## [winutil](https://github.com/ChrisTitusTech/winutil)
