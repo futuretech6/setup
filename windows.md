@@ -50,3 +50,16 @@ choco install llvm
 $env:HTTP_PROXY="http://127.0.0.1:7890"
 $env:HTTPS_PROXY="http://127.0.0.1:7890"
 ```
+
+## WSL
+
+/etc/wsl.conf
+
+```toml
+[automount]
+enabled = true
+options = "uid=1000,gid=1000,umask=22,fmask=11,metadata"
+
+[boot]
+command = "service docker start"
+```
