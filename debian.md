@@ -96,7 +96,7 @@ Environment="NO_PROXY=localhost,127.0.0.1"
 
 Docker CE mirrors: [Tuna](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/), [USTC](https://mirrors.ustc.edu.cn/help/docker-ce.html)
 
-Docker Registry: [Docker Proxy](https://dockerproxy.com/docs), [kubesre/docker-registry-mirrors](https://github.com/kubesre/docker-registry-mirrors)
+Docker Registry: [Docker Proxy](https://dockerproxy.com/docs), ~~[kubesre/docker-registry-mirrors](https://github.com/kubesre/docker-registry-mirrors)~~, [dqzboy/Docker-Proxy](https://github.com/dqzboy/Docker-Proxy)
 
 ## NodeJs
 
