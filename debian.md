@@ -321,4 +321,8 @@ sudo apt install qemu-system
 sudo apt-get install -y fcitx-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx-rime bash -s -- "iDvel/rime-ice:others/recipes/full"
+
+sudo apt-get install -y fcitx5 fcitx5-rime
+curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
+  | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime bash -s -- "iDvel/rime-ice:others/recipes/full"
 ```
