@@ -25,7 +25,14 @@ sudo update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
 ## Flatpak
 
 ```bash
+sudo apt install flatpak
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo  # require restart
+# sudo flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
 sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+
+# optional
+sudo apt install gnome-software-plugin-flatpak
+sudo apt install plasma-discover-backend-flatpak
 ```
 
 ## Rust
