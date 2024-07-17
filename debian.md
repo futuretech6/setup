@@ -315,7 +315,7 @@ sudo apt install qemu-system
 
 ## Rime
 
-[RIME | 中州韻輸入法引擎](https://rime.im/), [iDvel/rime-ice: Rime 配置：雾凇拼音 | 长期维护的简体词库](https://github.com/iDvel/rime-ice)
+[RIME | 中州韻輸入法引擎](https://rime.im/), [iDvel/rime-ice: Rime 配置：雾凇拼音 | 长期维护的简体词库](https://github.com/iDvel/rime-ice), [東風破 /plum/: Rime configuration manager](https://github.com/rime/plum)
 
 ```bash
 sudo apt-get install -y fcitx-rime
