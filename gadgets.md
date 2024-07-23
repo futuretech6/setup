@@ -90,7 +90,7 @@ https://github.com/abraunegg/onedrive#documentation-and-configuration-assistance
 - https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md
 - https://github.com/abraunegg/onedrive/blob/master/docs/Docker.md
 
-# Marp
+## Marp
 
 https://hub.docker.com/r/marpteam/marp-cli/
 
@@ -106,4 +106,32 @@ docker run --rm -v $PWD:/home/marp/app/ -e LANG=$LANG -e MARP_USER="$(id -u):$(i
 docker run --rm --init -v $PWD:/home/marp/app/ -e LANG=$LANG -e MARP_USER="$(id -u):$(id -g)" marpteam/marp-cli slide-deck.md --pdf --allow-local-files
 # convert to pptx
 docker run --rm --init -v $PWD:/home/marp/app/ -e LANG=$LANG -e MARP_USER="$(id -u):$(id -g)" marpteam/marp-cli slide-deck.md --pptx --allow-local-files
+```
+
+## vim-plug
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+cat << EOF >> ~/.vimrc
+call plug#begin()
+
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'preservim/nerdtree'
+
+call plug#end()
+EOF
+
+:PlugInstall
+:LspInstallServer  # in a file
+```
+
+## helix
+
+```bash
+git clone https://github.com/helix-editor/helix ~/.helix
+cargo install --path ~/.helix/helix-term --locked
+echo "export HELIX_RUNTIME=$HOME/.helix/runtime" >> ~/.profile
 ```
