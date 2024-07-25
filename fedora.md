@@ -47,7 +47,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # docker-ce mirrors
-sudo sed -i 's|download.docker.com|mirrors.ustc.edu.cn/docker-ce|g' /etc/yum.repos.d/docker-ce.repo
+sudo sed -i 's|download.docker.com|mirrors.tuna.tsinghua.edu.cn/docker-ce|g' /etc/yum.repos.d/docker-ce.repo  # ustc mirrors has no gpg file
 ```
 
 ## Microsoft
