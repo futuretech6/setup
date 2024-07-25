@@ -38,9 +38,15 @@ sudo apt install plasma-discover-backend-flatpak
 ## Rust
 
 ```bash
-# RUSTUP_UNPACK_RAM=200000000
-# RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-# RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+```
+
+```bash
+# export RUSTUP_UNPACK_RAM=200000000
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y  # disable confirmation prompt
 
 # [optional]
