@@ -57,7 +57,17 @@ dnf check-update
 sudo dnf install code # or code-insiders
 ```
 
-## Brave
+## Browser
+
+**Chrome**
+
+```bash
+sudo dnf install fedora-workstation-repositories
+sudo dnf config-manager --set-enabled google-chrome
+sudo dnf install google-chrome-stable
+```
+
+**Brave**
 
 ```bash
 sudo dnf install dnf-plugins-core
