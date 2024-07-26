@@ -27,11 +27,14 @@ ssh-add
 [wting/autojump: A cd command that learns - easily navigate directories from the command line](https://github.com/wting/autojump)
 
 ```bash
-# manual
+# debian (manual)
 sudo apt-get install -y python-is-python3
 git clone git@github.com:wting/autojump.git ~/.autojump-repo
 cd ~/.autojump-repo
 ./install.py  # remember to add the lines to ~/.zshrc as guided
+
+# fedora
+sudo dnf install -y autojump-zsh
 
 # macOS
 brew install autojump
