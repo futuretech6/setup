@@ -5,6 +5,7 @@
 ```bash
 sudo apt-get update
 sudo apt-get install -y wget curl git vim
+git config --global core.editor "vim"
 
 # oh-my-zsh
 sudo apt-get install -y zsh
