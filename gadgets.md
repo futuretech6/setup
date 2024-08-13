@@ -138,3 +138,12 @@ git clone https://github.com/helix-editor/helix ~/.helix
 cargo install --path ~/.helix/helix-term --locked
 echo "export HELIX_RUNTIME=$HOME/.helix/runtime" >> ~/.profile
 ```
+
+## Glow
+
+```bash
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+sudo apt-get update && sudo apt-get -y install glow
+```
