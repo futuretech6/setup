@@ -34,6 +34,9 @@ sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
 # optional
 sudo apt install gnome-software-plugin-flatpak
 sudo apt install plasma-discover-backend-flatpak
+
+# font
+ln -s /etc/fonts/ ~/.var/app/com.qq.QQmusic/config/fontconfig
 ```
 
 ## Rust
