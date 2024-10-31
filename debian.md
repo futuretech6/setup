@@ -341,6 +341,8 @@ echo 'export GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
 echo 'export QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
 echo 'export XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
 
+mkdir -p ~/.config/autostart && cp /usr/share/applications/fcitx.desktop ~/.config/autostart
+
 # fcitx5
 sudo apt-get install -y fcitx5 fcitx5-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
