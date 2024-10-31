@@ -328,10 +328,16 @@ sudo apt install qemu-system
 [RIME | 中州韻輸入法引擎](https://rime.im/), [iDvel/rime-ice: Rime 配置：雾凇拼音 | 长期维护的简体词库](https://github.com/iDvel/rime-ice), [東風破 /plum/: Rime configuration manager](https://github.com/rime/plum)
 
 ```bash
+# fcitx
 sudo apt-get install -y fcitx-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx-rime bash -s -- "iDvel/rime-ice:others/recipes/full"
+echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
+echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
+echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
+source ~/.profile
 
+# fcitx5
 sudo apt-get install -y fcitx5 fcitx5-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime bash -s -- "iDvel/rime-ice:others/recipes/full"
