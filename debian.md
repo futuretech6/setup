@@ -332,10 +332,10 @@ sudo apt install qemu-system
 sudo apt-get install -y fcitx-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx-rime bash -s -- "iDvel/rime-ice:others/recipes/full"
-echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
-echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
-echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
-source ~/.profile
+mkdir -p ~/.config/environment.d/
+echo 'export GTK_IM_MODULE=fcitx' > ~/.config/environment.d/im.conf
+echo 'export QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
+echo 'export XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
 
 # fcitx5
 sudo apt-get install -y fcitx5 fcitx5-rime
