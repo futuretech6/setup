@@ -353,4 +353,6 @@ echo 'export INPUT_METHOD=fcitx5' > ~/.config/environment.d/im.conf
 echo 'export GTK_IM_MODULE=fcitx5' >> ~/.config/environment.d/im.conf
 echo 'export QT_IM_MODULE=fcitx5' >> ~/.config/environment.d/im.conf
 echo 'export XMODIFIERS=@im=fcitx5' >> ~/.config/environment.d/im.conf
+
+mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 ```
