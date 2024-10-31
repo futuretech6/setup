@@ -356,5 +356,10 @@ echo 'export GTK_IM_MODULE=fcitx5' >> ~/.config/environment.d/im.conf
 echo 'export QT_IM_MODULE=fcitx5' >> ~/.config/environment.d/im.conf
 echo 'export XMODIFIERS=@im=fcitx5' >> ~/.config/environment.d/im.conf
 
+echo 'export INPUT_METHOD=fcitx5' >> ~/.profile  # chrome use .profile rather than environment.d
+echo 'export GTK_IM_MODULE=fcitx5' >> ~/.profile
+echo 'export QT_IM_MODULE=fcitx5' >> ~/.profile
+echo 'export XMODIFIERS=@im=fcitx5' >> ~/.profile
+
 mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 ```
