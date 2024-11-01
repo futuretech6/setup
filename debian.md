@@ -363,5 +363,8 @@ echo 'export XMODIFIERS=@im=fcitx5' >> ~/.profile
 
 mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 ```
-如果第三方应用还是没法用输入法，就尝试切换把 DE 从 Wayland 切换为 Xorg
 
+如果第三方应用还是没法在 Wayland 下使用输入法，两种解决方案：
+
+1. 尝试把 DE 切换为 Xorg 版本的
+2. 如果是 Gnome，可以安装插件 [Input Method Panel](https://extensions.gnome.org/extension/261/kimpanel/)
