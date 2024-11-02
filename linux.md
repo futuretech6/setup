@@ -18,7 +18,7 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 
 # enable
-sudo ehco "/swapfile none swap sw 0 0" >> /etc/fstab
+echo "/swapfile none swap sw 0 0" | sudo tee -a /etc/fstab
 
 # swappiness
 sudo sysctl vm.swappiness=10
