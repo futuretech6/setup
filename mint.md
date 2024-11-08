@@ -3,6 +3,7 @@
 ## Chinese font
 
 ```bash
+sudo apt-get install -y fonts-noto-cjk
 sudo vim /etc/fonts/conf.avail/64-language-selector-prefer.conf
 sudo ln -s /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf
 ```
