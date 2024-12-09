@@ -368,3 +368,32 @@ mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desk
 
 1. 尝试把 DE 切换为 Xorg 版本的
 2. 如果是 Gnome，可以安装插件 [Input Method Panel](https://extensions.gnome.org/extension/261/kimpanel/)
+
+## Deb Multimedia
+
+'deb-multimedia.org', not the 'Debian Multimedia Maintainers'. [^deb-multimedia]
+
+[^deb-multimedia]: https://wiki.debian.org/DebianMultimedia/FAQ
+
+```bash
+wget https://mirrors.ustc.edu.cn/deb-multimedia/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb
+sudo apt-get install ./deb-multimedia-keyring_2016.8.1_all.deb
+rm ./deb-multimedia-keyring_2016.8.1_all.deb
+
+echo "deb https://mirrors.ustc.edu.cn/deb-multimedia/ $(lsb_release -cs) main non-free" \
+  | sudo tee /etc/apt/sources.list.d/deb-multimedia.list
+echo "deb https://mirrors.ustc.edu.cn/deb-multimedia/ $(lsb_release -cs)-backports main" \
+  | sudo tee /etc/apt/sources.list.d/deb-multimedia.list
+```
+
+## Debian CN
+
+https://github.com/debiancn/repo/blob/master/README.rst
+
+```bash
+echo "deb https://repo.debiancn.org/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/debiancn.list;
+wget https://repo.debiancn.org/pool/main/d/debiancn-keyring/debiancn-keyring_0~20161212_all.deb -O /tmp/debiancn-keyring.deb;
+sudo apt install /tmp/debiancn-keyring.deb;
+sudo apt update;
+rm /tmp/debiancn-keyring.deb;
+```
