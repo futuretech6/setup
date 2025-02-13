@@ -102,7 +102,9 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # registry
-echo '{ "registry-mirrors": [ "https://docker.kubesre.xyz" ] }' | sudo tee /etc/docker/daemon.json
+echo '{ "registry-mirrors": ["https://docker.m.daocloud.io"] }' | sudo tee /etc/docker/daemon.json
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 
 # proxy: sudo vim /lib/systemd/system/docker.service
 [Service]
