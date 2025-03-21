@@ -364,6 +364,8 @@ echo 'export QT_IM_MODULE=fcitx5' >> ~/.profile
 echo 'export XMODIFIERS=@im=fcitx5' >> ~/.profile
 
 mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
+
+sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.local/share/fcitx5/rime/default.yaml
 ```
 
 如果第三方应用还是没法在 Wayland 下使用输入法，两种解决方案：
