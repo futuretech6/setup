@@ -333,7 +333,7 @@ sudo apt install qemu-system
 # fcitx
 sudo apt-get install -y fcitx-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
-  | plum_dir=$HOME/.plum rime_frontend=fcitx-rime bash -s -- "iDvel/rime-ice:others/recipes/full"
+  | plum_dir=$HOME/.plum rime_frontend=fcitx-rime bash -s -- :all
 
 im-config -n fcitx
 
@@ -343,12 +343,17 @@ echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
 echo 'QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
 echo 'XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
 
+echo 'export INPUT_METHOD=fcitx' >> ~/.profile  # chrome use .profile rather than environment.d
+echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
+echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
+echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
+
 mkdir -p ~/.config/autostart && cp /usr/share/applications/fcitx.desktop ~/.config/autostart
 
 # fcitx5
 sudo apt-get install -y fcitx5 fcitx5-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
-  | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime bash -s -- "iDvel/rime-ice:others/recipes/full"
+  | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime bash -s -- :all
 
 im-config -n fcitx5
 
