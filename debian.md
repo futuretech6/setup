@@ -355,7 +355,7 @@ mkdir -p ~/.config/autostart && cp /usr/share/applications/fcitx.desktop ~/.conf
 sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.config/fcitx/rime/default.yaml        
 
 # fcitx5
-sudo apt-get install -y fcitx5 fcitx5-rime
+sudo apt-get install -y fcitx5 fcitx5-rime fcitx5-material-color
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime bash -s -- :all
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
