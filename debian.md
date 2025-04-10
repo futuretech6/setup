@@ -339,16 +339,16 @@ curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
 
 im-config -n fcitx
 
-mkdir -p ~/.config/environment.d/
-echo 'INPUT_METHOD=fcitx' > ~/.config/environment.d/im.conf
-echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
-echo 'QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
-echo 'XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
+# mkdir -p ~/.config/environment.d/
+# echo 'INPUT_METHOD=fcitx' > ~/.config/environment.d/im.conf
+# echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
+# echo 'QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
+# echo 'XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
 
-echo 'export INPUT_METHOD=fcitx' >> ~/.profile  # chrome use .profile rather than environment.d
-echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
-echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
-echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
+# echo 'export INPUT_METHOD=fcitx' >> ~/.profile  # chrome use .profile rather than environment.d
+# echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
+# echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
+# echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
 
 mkdir -p ~/.config/autostart && cp /usr/share/applications/fcitx.desktop ~/.config/autostart
 
@@ -363,16 +363,16 @@ curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
 
 im-config -n fcitx5
 
-mkdir -p ~/.config/environment.d/
-echo 'INPUT_METHOD=fcitx5' > ~/.config/environment.d/im.conf
-echo 'GTK_IM_MODULE=fcitx5' >> ~/.config/environment.d/im.conf
-echo 'QT_IM_MODULE=fcitx5' >> ~/.config/environment.d/im.conf
-echo 'XMODIFIERS=@im=fcitx5' >> ~/.config/environment.d/im.conf
+# mkdir -p ~/.config/environment.d/
+# echo 'INPUT_METHOD=fcitx' > ~/.config/environment.d/im.conf
+# echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
+# echo 'QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
+# echo 'XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
 
-echo 'export INPUT_METHOD=fcitx5' >> ~/.profile  # chrome use .profile rather than environment.d
-echo 'export GTK_IM_MODULE=fcitx5' >> ~/.profile
-echo 'export QT_IM_MODULE=fcitx5' >> ~/.profile
-echo 'export XMODIFIERS=@im=fcitx5' >> ~/.profile
+# echo 'export INPUT_METHOD=fcitx' >> ~/.profile  # chrome use .profile rather than environment.d
+# echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
+# echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
+# echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
 
 mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 
