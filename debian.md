@@ -334,6 +334,8 @@ sudo apt install qemu-system
 sudo apt-get install -y fcitx-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx-rime bash -s -- :all
+curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
+  | plum_dir=$HOME/.plum rime_frontend=fcitx-rime bash -s -- iDvel/rime-ice:others/recipes/full
 
 im-config -n fcitx
 
@@ -350,10 +352,14 @@ echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
 
 mkdir -p ~/.config/autostart && cp /usr/share/applications/fcitx.desktop ~/.config/autostart
 
+sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.config/fcitx/rime/default.yaml        
+
 # fcitx5
 sudo apt-get install -y fcitx5 fcitx5-rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime bash -s -- :all
+curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
+  | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime bash -s -- iDvel/rime-ice:others/recipes/full
 
 im-config -n fcitx5
 
