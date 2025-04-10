@@ -384,6 +384,8 @@ sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.local/share/fcitx5/rime/defau
 1. 尝试把 DE 切换为 Xorg 版本的
 2. 如果是 Gnome，可以安装插件 [Input Method Panel](https://extensions.gnome.org/extension/261/kimpanel/)
 
+仍有问题：`fcitx5-diagnose`
+
 ## Deb Multimedia
 
 'deb-multimedia.org', not the 'Debian Multimedia Maintainers'. [^deb-multimedia]
