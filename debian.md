@@ -332,6 +332,7 @@ sudo apt install qemu-system
 ```bash
 # fcitx
 sudo apt-get install -y fcitx-rime
+
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx-rime bash -s -- :all
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
@@ -356,6 +357,8 @@ sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.config/fcitx/rime/default.yam
 
 # fcitx5
 sudo apt-get install -y fcitx5 fcitx5-rime fcitx5-material-color
+# flatpak install -y flathub org.fcitx.Fcitx5 && flatpak install -y flathub org.fcitx.Fcitx5.Addon.Rime
+
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime bash -s -- :all
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
