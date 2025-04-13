@@ -103,14 +103,19 @@ sudo usermod -aG docker $USER
 
 # registry
 echo '{ "registry-mirrors": ["https://docker.m.daocloud.io"] }' | sudo tee /etc/docker/daemon.json
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+sudo systemctl daemon-reload && sudo systemctl restart docker
 
-# proxy: sudo vim /lib/systemd/system/docker.service
-[Service]
-Environment="HTTP_PROXY=http://127.0.0.1:7890"
-Environment="HTTPS_PROXY=http://127.0.0.1:7890"
-Environment="NO_PROXY=localhost,127.0.0.1"
+# proxy
+sudo tee /etc/docker/daemon.json <<EOF
+{
+  "proxies": {
+    "http-proxy": "http://127.0.0.1:17890",
+    "https-proxy": "http://127.0.0.1:17890",
+    "no-proxy": "localhost,127.0.0.0/8"
+  }
+}
+EOF
+sudo systemctl daemon-reload && sudo systemctl restart docker
 ```
 
 Docker CE mirrors: [Tuna](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/), [USTC](https://mirrors.ustc.edu.cn/help/docker-ce.html)
