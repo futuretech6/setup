@@ -385,6 +385,7 @@ mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desk
 sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.local/share/fcitx5/rime/default.yaml
 
 # fcitx5 (flatpak): 若 librime 版本过低使用
+sudo apt-get install -y fcitx5  # need a front-end in host
 flatpak install -y flathub org.fcitx.Fcitx5 && flatpak install -y flathub org.fcitx.Fcitx5.Addon.Rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime rime_dir=$HOME/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/ bash -s -- "iDvel/rime-ice:others/recipes/full"
