@@ -334,6 +334,7 @@ sudo apt install qemu-system
 
 [RIME | 中州韻輸入法引擎](https://rime.im/), [iDvel/rime-ice: Rime 配置：雾凇拼音 | 长期维护的简体词库](https://github.com/iDvel/rime-ice), [東風破 /plum/: Rime configuration manager](https://github.com/rime/plum)
 
+<!--
 ```bash
 # fcitx
 sudo apt-get install -y fcitx-rime
@@ -359,7 +360,10 @@ im-config -n fcitx
 mkdir -p ~/.config/autostart && cp /usr/share/applications/fcitx.desktop ~/.config/autostart
 
 sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.config/fcitx/rime/default.yaml        
+```
+-->
 
+```bash
 # fcitx5
 sudo apt-get install -y fcitx5 fcitx5-rime fcitx5-material-color
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
@@ -383,6 +387,7 @@ echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
 mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 
 sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.local/share/fcitx5/rime/default.yaml
+sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' ~/.local/share/fcitx5/rime/default.yaml
 
 # fcitx5 (flatpak): 若 librime 版本过低使用
 sudo apt-get install -y fcitx5  # need a front-end in host
@@ -406,6 +411,7 @@ echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
 echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
 
 sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/default.yaml
+sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' ~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/default.yaml
 ```
 
 如果第三方应用还是没法在 Wayland 下使用输入法，两种解决方案：
