@@ -369,16 +369,16 @@ curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
 
 im-config -n fcitx5
 
-# mkdir -p ~/.config/environment.d/
-# echo 'INPUT_METHOD=fcitx' > ~/.config/environment.d/im.conf
-# echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
-# echo 'QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
-# echo 'XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
+mkdir -p ~/.config/environment.d/
+echo 'INPUT_METHOD=fcitx' > ~/.config/environment.d/im.conf
+echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
+echo 'QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
+echo 'XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
 
-# echo 'export INPUT_METHOD=fcitx' >> ~/.profile  # chrome use .profile rather than environment.d
-# echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
-# echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
-# echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
+echo 'export INPUT_METHOD=fcitx' >> ~/.profile  # chrome use .profile rather than environment.d
+echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
+echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
+echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
 
 mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 
@@ -389,6 +389,19 @@ sudo apt-get install -y fcitx5  # need a front-end in host
 flatpak install -y flathub org.fcitx.Fcitx5 && flatpak install -y flathub org.fcitx.Fcitx5.Addon.Rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime rime_dir=$HOME/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/ bash -s -- "iDvel/rime-ice:others/recipes/full"
+
+im-config -n fcitx5
+
+mkdir -p ~/.config/environment.d/
+echo 'INPUT_METHOD=fcitx' > ~/.config/environment.d/im.conf
+echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
+echo 'QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
+echo 'XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
+
+echo 'export INPUT_METHOD=fcitx' >> ~/.profile  # chrome use .profile rather than environment.d
+echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
+echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
+echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
 
 sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/default.yaml
 ```
