@@ -392,6 +392,8 @@ curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
 
 im-config -n fcitx5
 
+mkdir -p ~/.config/autostart && cp /var/lib/flatpak/exports/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/fcitx5-flatpak.desktop
+
 mkdir -p ~/.config/environment.d/
 echo 'INPUT_METHOD=fcitx' > ~/.config/environment.d/im.conf
 echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
