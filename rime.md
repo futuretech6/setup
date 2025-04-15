@@ -2,7 +2,8 @@
 
 [RIME | 中州韻輸入法引擎](https://rime.im/), [iDvel/rime-ice: Rime 配置：雾凇拼音 | 长期维护的简体词库](https://github.com/iDvel/rime-ice), [東風破 /plum/: Rime configuration manager](https://github.com/rime/plum)
 
-## fcitx4
+<details>
+  <summary><h2>fcitx4</h2></summary>
 
 ```bash
 sudo apt-get install -y fcitx-rime
@@ -37,6 +38,8 @@ mkdir -p ~/.config/autostart && cp /usr/share/applications/fcitx.desktop ~/.conf
 sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.config/fcitx/rime/default.yaml
 sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' ~/.config/fcitx/rime/default.yaml
 ```
+
+</details>
 
 ## fcitx5
 
