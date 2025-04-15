@@ -373,16 +373,23 @@ curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
 
 im-config -n fcitx5
 
-mkdir -p ~/.config/environment.d/
-echo 'INPUT_METHOD=fcitx' > ~/.config/environment.d/im.conf
-echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
-echo 'QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
-echo 'XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
+mkdir -p ~/.config/environment.d/ && cat <<EOF > ~/.config/environment.d/im.conf
+INPUT_METHOD=fcitx
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+GLFW_IM_MODULE=fcitx
+EOF
 
-echo 'export INPUT_METHOD=fcitx' >> ~/.profile  # chrome use .profile rather than environment.d
-echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
-echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
-echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
+cat <<EOF >> ~/.profile
+export INPUT_METHOD=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export SDL_IM_MODULE=fcitx
+export GLFW_IM_MODULE=fcitx
+EOF
 
 mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 
@@ -390,25 +397,32 @@ sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.local/share/fcitx5/rime/defau
 sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' ~/.local/share/fcitx5/rime/default.yaml
 
 # fcitx5 (flatpak): 若 librime 版本过低使用
-sudo apt-get install -y fcitx5  # need a front-end in host
+sudo apt-get install -y ibus  # need a front-end in host, using fcitx4(5) as front-end is horrible in Ubuntu 22.04
 flatpak install -y flathub org.fcitx.Fcitx5 && flatpak install -y flathub org.fcitx.Fcitx5.Addon.Rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
   | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime rime_dir=$HOME/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/ bash -s -- "iDvel/rime-ice:others/recipes/full"
 
-im-config -n fcitx5
+im-config -n ibus
 
 mkdir -p ~/.config/autostart && cp /var/lib/flatpak/exports/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/fcitx5-flatpak.desktop
 
-mkdir -p ~/.config/environment.d/
-echo 'INPUT_METHOD=fcitx' > ~/.config/environment.d/im.conf
-echo 'GTK_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
-echo 'QT_IM_MODULE=fcitx' >> ~/.config/environment.d/im.conf
-echo 'XMODIFIERS=@im=fcitx' >> ~/.config/environment.d/im.conf
+mkdir -p ~/.config/environment.d/ && cat <<EOF > ~/.config/environment.d/im.conf
+INPUT_METHOD=ibus
+GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
+SDL_IM_MODULE=ibus
+GLFW_IM_MODULE=ibus
+EOF
 
-echo 'export INPUT_METHOD=fcitx' >> ~/.profile  # chrome use .profile rather than environment.d
-echo 'export GTK_IM_MODULE=fcitx' >> ~/.profile
-echo 'export QT_IM_MODULE=fcitx' >> ~/.profile
-echo 'export XMODIFIERS=@im=fcitx' >> ~/.profile
+cat <<EOF >> ~/.profile
+export INPUT_METHOD=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export SDL_IM_MODULE=ibus
+export GLFW_IM_MODULE=ibus
+EOF
 
 sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/default.yaml
 sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' ~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/default.yaml
