@@ -6,7 +6,7 @@ For SSH remote
 
 ```bash
 # echo "eval \`ssh-agent -s\`; ssh-add" >> ~/.profile
-eval `ssh-agent -s`                                              
+eval `ssh-agent -s`
 ssh-add
 ```
 
@@ -77,6 +77,7 @@ https://github.com/futuretech6/dotfiles/blob/master/proxychains/proxychains.conf
 npm install -g @microsoft/inshellisense
 inshellisense bind
 ```
+
 ## [Pandoc](https://github.com/jgm/pandoc)
 
 ```bash
@@ -90,6 +91,7 @@ docker run --rm --volume "`pwd`:/data" --user `id -u`:`id -g` pandoc/latex READM
 ## [OneDrive](https://github.com/abraunegg/onedrive)
 
 https://github.com/abraunegg/onedrive#documentation-and-configuration-assistance
+
 - https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md
 - https://github.com/abraunegg/onedrive/blob/master/docs/Docker.md
 
