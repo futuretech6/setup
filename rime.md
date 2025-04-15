@@ -123,4 +123,4 @@ sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' ~/.var/app/org.fcitx.Fcitx5/dat
 1. 尝试把 DE 切换为 Xorg 版本的
 2. 如果是 Gnome，可以安装插件 [Input Method Panel](https://extensions.gnome.org/extension/261/kimpanel/)
 
-仍有问题：`fcitx5-diagnose`
+仍有问题：`fcitx5-diagnose` 或 `flatpak run --command=fcitx5-diagnose org.fcitx.Fcitx5`
