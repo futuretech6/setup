@@ -36,4 +36,5 @@ unzip example.com.zip -d certificates
 cat certificates/certificate.crt certificates/ca_bundle.crt | sudo tee /etc/ssl/certificate.crt.merge > /dev/null
 sudo cp certificates/private.key /etc/ssl/private/private.key
 rm -rf certificates/
+sudo systemctl restart nginx.service
 ```
