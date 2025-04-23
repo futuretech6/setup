@@ -311,6 +311,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/package
 
 sudo apt-get update
 sudo apt-get install -y firefox/mozilla  # not the snap version
+sudo apt-mark hold firefox               # fuck canonical and snap
 ```
 
 **Brave**
