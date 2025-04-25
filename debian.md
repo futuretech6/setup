@@ -281,7 +281,7 @@ echo "export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH" >> ~/.profile
 
 ```bash
 # set proxy for apt
-echo 'Acquire::http::Proxy "http://username:password@127.0.0.1:7890/";' | sudo tee -a /etc/apt/apt.conf
+echo 'Acquire::http::Proxy "http://username:password@127.0.0.1:7890/";' | sudo tee /etc/apt/apt.conf
 echo 'Acquire::https::Proxy "http://username:password@127.0.0.1:7890/";' | sudo tee -a /etc/apt/apt.conf
 ```
 
@@ -305,9 +305,9 @@ https://support.mozilla.org/en-US/kb/install-firefox-linux
 ```bash
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" \
-  | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+  | sudo tee /etc/apt/sources.list.d/mozilla.list > /dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://mirrors.ustc.edu.cn/mozilla/apt mozilla main" \
-  | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null  # 镜像
+  | sudo tee /etc/apt/sources.list.d/mozilla.list > /dev/null  # 镜像
 
 sudo apt-get update
 sudo apt-get install -y firefox/mozilla  # not the snap version
