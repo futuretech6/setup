@@ -1,3 +1,4 @@
+# Linux Ubuntu
 
 ## Golang
 
@@ -15,7 +16,7 @@ mv go /usr/local
 vim ~/.bashrc
 
 export GOROOT=/usr/local/go
-export GOPATH=/usr/local/go
+export GOPATH=/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 source ~/.bashrc
