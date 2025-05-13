@@ -18,6 +18,10 @@ sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="ys"/' ~/.zshrc
 echo "source ~/.profile" >> ~/.zshrc
 echo "zstyle ':omz:update' mode auto" >> ~/.zshrc
 
+# starship
+curl -sS https://starship.rs/install.sh | sh
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
+
 # locale for zh_CN
 locale-gen zh_CN.UTF-8
 sudo update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
