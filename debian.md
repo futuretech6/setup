@@ -22,6 +22,13 @@ echo "zstyle ':omz:update' mode auto" >> ~/.zshrc
 curl -sS https://starship.rs/install.sh | sh
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
+# nerd-fonts
+mkdir -p ~/.local/share/fonts/NerdFonts
+cd ~/.local/share/fonts/NerdFonts
+curl -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.tar.xz | tar -xJ
+fc-cache -fv
+fc-list | grep "Nerd"
+
 # locale for zh_CN
 locale-gen zh_CN.UTF-8
 sudo update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
