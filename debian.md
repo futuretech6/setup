@@ -157,7 +157,7 @@ yarn set version 1.22.19
 # from pkg
 sudo apt-get install -y golang
 # from binary (https://go.dev/dl/)
-sudo rm -rf /usr/local/go && proxychains curl -L "https://go.dev/dl/go1.20.3.linux-amd64.tar.gz" \
+sudo rm -rf /usr/local/go && proxychains curl -L "https://go.dev/dl/go1.24.3.linux-$(dpkg --print-architecture).tar.gz" \
   | sudo tar -C /usr/local -xz
 export PATH=$PATH:/usr/local/go/bin
 
