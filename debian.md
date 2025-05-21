@@ -163,6 +163,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 # [optional]
 echo "export GOPROXY=https://mirrors.aliyun.com/goproxy/" >> ~/.profile
+go env -w GOPROXY=https://goproxy.io,direct
 ```
 
 ## Python
