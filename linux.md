@@ -21,7 +21,8 @@ sudo swapon /swapfile
 echo "/swapfile none swap sw 0 0" | sudo tee -a /etc/fstab
 
 # swappiness
-sudo sysctl vm.swappiness=10
+sudo sysctl vm.swappiness=10  # temporary
+sudo sed -i.bak 's/vm\.swappiness\s*=\s*[0-9]*/vm.swappiness = 10/' /etc/sysctl.conf  # permanent
 cat /proc/sys/vm/swappiness
 ```
 
