@@ -206,6 +206,10 @@ pip config set global.break-system-packages true
 # https://github.com/pypa/pipx
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
+
+# or global
+python3 -m pip install pipx
+pipx install --global pre-commit
 ```
 
 ## Solidity
