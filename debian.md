@@ -21,6 +21,7 @@ echo "zstyle ':omz:update' mode auto" >> ~/.zshrc
 # starship
 curl -sS https://starship.rs/install.sh | sh
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
+echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 # nerd-fonts
 mkdir -p ~/.local/share/fonts/NerdFonts
