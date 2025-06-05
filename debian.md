@@ -372,9 +372,9 @@ sudo apt install qemu-system
 [^deb-multimedia]: https://wiki.debian.org/DebianMultimedia/FAQ
 
 ```bash
-wget https://mirrors.ustc.edu.cn/deb-multimedia/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2016.8.1_all.deb
-sudo apt-get install ./deb-multimedia-keyring_2016.8.1_all.deb
-rm ./deb-multimedia-keyring_2016.8.1_all.deb
+curl -L https://mirrors.ustc.edu.cn/deb-multimedia/pool/main/d/deb-multimedia-keyring/deb-multimedia-keyring_2024.9.1_all.deb -o /tmp/deb-multimedia-keyring.deb
+sudo apt-get install -y /tmp/deb-multimedia-keyring.deb
+rm /tmp/deb-multimedia-keyring.deb
 
 echo "deb https://mirrors.ustc.edu.cn/deb-multimedia/ $(lsb_release -cs) main non-free" \
   | sudo tee /etc/apt/sources.list.d/deb-multimedia.list
