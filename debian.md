@@ -132,7 +132,7 @@ sudo systemctl daemon-reload && sudo systemctl restart docker
 
 Docker CE mirrors: [Tuna](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/), [USTC](https://mirrors.ustc.edu.cn/help/docker-ce.html)
 
-Docker Registry: [Docker Proxy](https://dockerproxy.com/docs), ~~[kubesre/docker-registry-mirrors](https://github.com/kubesre/docker-registry-mirrors)~~, [dqzboy/Docker-Proxy](https://github.com/dqzboy/Docker-Proxy)
+Docker Registry: https://status.daocloud.io/status/docker
 
 ## NodeJs
 
