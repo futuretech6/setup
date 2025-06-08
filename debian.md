@@ -212,6 +212,16 @@ python3 -m pipx ensurepath
 sudo pip config set global.break-system-packages true
 sudo pip install pipx
 sudo pipx install --global pre-commit
+
+# uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+sudo mkdir -p /etc/uv
+sudo tee /etc/uv/uv.toml <<EOF
+python-install-mirror = "https://gh-proxy.com/github.com/astral-sh/python-build-standalone/releases/download"
+[[index]]
+url = "https://mirrors.ustc.edu.cn/pypi/simple"
+default = true
+EOF
 ```
 
 ## Solidity
