@@ -19,7 +19,7 @@ echo "source ~/.profile" >> ~/.zshrc
 echo "zstyle ':omz:update' mode auto" >> ~/.zshrc
 
 # starship
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
