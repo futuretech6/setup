@@ -39,3 +39,10 @@ sudo cp certificates/private.key /etc/ssl/private/private.key
 rm -rf certificates/
 sudo systemctl restart nginx.service
 ```
+
+## acme.sh
+
+```bash
+export DuckDNS_Token=""
+acme.sh --issue --dns dns_duckdns -d my-domain.duckdns.org --debug --log
+```
