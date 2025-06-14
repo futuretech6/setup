@@ -58,8 +58,11 @@ acme.sh --renew -d my-domain.duckdns.org --server letsencrypt --force
 /etc/nginx/sites-available/default
 
 ```diff
-- proxy_pass http://vaultwarden-default;
-+ proxy_pass http://vaultwarden-default/vaultwarden/;
+location /vaultwarden/ {
+    ...
+-   proxy_pass http://vaultwarden-default;
++   proxy_pass http://vaultwarden-default/vaultwarden/;
+}
 ```
 
 compose.yaml
@@ -67,3 +70,5 @@ compose.yaml
 ```yaml
 environment: [DOMAIN=https://my.domain.com/vaultwarden]
 ```
+
+Check https://my.domain.com/vaultwarden/api/config to validate.
