@@ -50,3 +50,20 @@ acme.sh --issue --dns dns_duckdns -d my-domain.duckdns.org --server letsencrypt 
 export DuckDNS_Token=""
 acme.sh --renew -d my-domain.duckdns.org --server letsencrypt --force
 ```
+
+## vaultwarden
+
+[official wiki](https://github.com/dani-garcia/vaultwarden/wiki/Proxy-examples)'s proxy_pass settings in "Nginx with sub-path" are incorrect.
+
+/etc/nginx/sites-available/default
+
+```diff
+- proxy_pass http://vaultwarden-default;
++ proxy_pass http://vaultwarden-default/vaultwarden/;
+```
+
+compose.yaml
+
+```yaml
+environment: [DOMAIN=https://my.domain.com/vaultwarden]
+```
