@@ -44,5 +44,9 @@ sudo systemctl restart nginx.service
 
 ```bash
 export DuckDNS_Token=""
-acme.sh --issue --dns dns_duckdns -d my-domain.duckdns.org --debug --log
+acme.sh --issue --dns dns_duckdns -d my-domain.duckdns.org --server letsencrypt --debug --log
+
+# force renew
+export DuckDNS_Token=""
+acme.sh --renew -d my-domain.duckdns.org --server letsencrypt --force
 ```
