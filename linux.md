@@ -43,6 +43,10 @@ sudo systemctl restart nginx.service
 ## acme.sh
 
 ```bash
+# 按顺序分别测试 cf、go、ali、tx 的 doh，如果前两者都无法连接，则会 fallback 到 alidns，
+# 但是 alidns 对 TXT 字段修改的响应很慢，**可能**导致失败。
+sed -i "s/dns.alidns.com/whatever.doh.provider/" ~/.acme.sh/acme.sh
+
 export DuckDNS_Token=""
 acme.sh --issue --dns dns_duckdns -d my-domain.duckdns.org --server letsencrypt --debug --log
 
