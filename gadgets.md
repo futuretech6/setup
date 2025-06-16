@@ -33,6 +33,12 @@ git clone git@github.com:wting/autojump.git ~/.autojump-repo
 cd ~/.autojump-repo
 ./install.py  # remember to add the lines to ~/.zshrc as guided
 
+# debian (apt)
+sudo apt-get install -y autojump
+echo ". /usr/share/autojump/autojump.sh" >> ~/.bashrc        # for non-login interactive shells
+echo ". /usr/share/autojump/autojump.sh" >> ~/.bash_profile  # for login shells
+echo ". /usr/share/autojump/autojump.sh" >> ~/.zshrc         # for all interactive shells
+
 # fedora
 sudo dnf install -y autojump-zsh
 
