@@ -1,3 +1,13 @@
+# Web3
+
+## Solidity
+
+```bash
+pipx install solc-select
+solc-select install all
+solc-select use $VERSION
+```
+
 ## Anchor
 
 ```bash
