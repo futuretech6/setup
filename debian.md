@@ -6,6 +6,12 @@
 sudo apt-get update
 sudo apt-get install -y wget curl git vim
 git config --global core.editor "vim"
+
+# set proxy for apt (or just `proxychains sudo apt ...`)
+sudo tee /etc/apt/apt.conf <<EOF
+Acquire::http::Proxy "http://127.0.0.1:17890/";
+Acquire::https::Proxy "http://127.0.0.1:17890/";
+EOF
 ```
 
 ## Flatpak
@@ -115,12 +121,6 @@ sudo service redis-server start  # wsl
 ```
 
 ## Browser
-
-```bash
-# set proxy for apt
-echo 'Acquire::http::Proxy "http://username:password@127.0.0.1:7890/";' | sudo tee /etc/apt/apt.conf
-echo 'Acquire::https::Proxy "http://username:password@127.0.0.1:7890/";' | sudo tee -a /etc/apt/apt.conf
-```
 
 **Chrome**
 
