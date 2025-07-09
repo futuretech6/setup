@@ -35,8 +35,15 @@ ln -s /etc/fonts/ ~/.var/app/com.qq.QQmusic/config/fontconfig
 
 ```bash
 LLVM_VERSION=
+
+# script
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)" $LLVM_VERSION
-echo 'export CC=`which clang-$LLVM_VERSION` ; export CXX=`which clang++-$LLVM_VERSION`' >> ~/.profile
+
+# manual
+curl -sSL https://apt.llvm.org/llvm-snapshot.gpg.key | sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
+echo "deb [arch=$(dpkg --print-architecture)] https://apt.llvm.org/$(lsb_release -cs) llvm-toolchain-$(lsb_release -cs)-${LLVM_VERSION} main" | \
+        sudo tee /etc/apt/sources.list.d/llvm-${LLVM_VERSION}.list
+sudo apt-get update
 
 # [optional]
 sudo apt-get install -y clangd-$LLVM_VERSION clang-format-$LLVM_VERSION clang-tidy-$LLVM_VERSION
