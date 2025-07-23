@@ -6,6 +6,7 @@
 sudo apt-get update
 sudo apt-get install -y wget curl git vim
 git config --global core.editor "vim"
+git config --global commit.gpgsign true
 
 # set proxy for apt (or just `proxychains sudo apt ...`)
 sudo tee /etc/apt/apt.conf <<EOF
