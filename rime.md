@@ -15,6 +15,8 @@ curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
 
 im-config -n fcitx
 
+mkdir -p ~/.config/autostart && cp /usr/share/applications/fcitx.desktop ~/.config/autostart
+
 mkdir -p ~/.config/environment.d/ && cat <<EOF > ~/.config/environment.d/im.conf
 INPUT_METHOD=fcitx
 GTK_IM_MODULE=fcitx
@@ -32,11 +34,6 @@ export XMODIFIERS=@im=fcitx
 export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=fcitx
 EOF
-
-mkdir -p ~/.config/autostart && cp /usr/share/applications/fcitx.desktop ~/.config/autostart
-
-sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.config/fcitx/rime/default.yaml
-sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' ~/.config/fcitx/rime/default.yaml
 ```
 
 </details>
@@ -52,6 +49,8 @@ curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
 
 im-config -n fcitx5
 
+mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
+
 mkdir -p ~/.config/environment.d/ && cat <<EOF > ~/.config/environment.d/im.conf
 INPUT_METHOD=fcitx
 GTK_IM_MODULE=fcitx
@@ -69,11 +68,6 @@ export XMODIFIERS=@im=fcitx
 export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=fcitx
 EOF
-
-mkdir -p ~/.config/autostart && cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
-
-sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.local/share/fcitx5/rime/default.yaml
-sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' ~/.local/share/fcitx5/rime/default.yaml
 ```
 
 ## fcitx5 (flatpak)
@@ -107,9 +101,17 @@ export XMODIFIERS=@im=ibus
 export SDL_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
 EOF
+```
 
-sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' ~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/default.yaml
-sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' ~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/default.yaml
+## user config
+
+```bash
+export RIME_DEFAULT_CONFIG=~/.config/fcitx/rime/default.yaml  # fcitx4
+export RIME_DEFAULT_CONFIG=~/.local/share/fcitx5/rime/default.yaml  # fcitx5
+export RIME_DEFAULT_CONFIG=~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/default.yaml  # fcitx5 (flatpak)
+
+sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' $RIME_DEFAULT_CONFIG
+sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' $RIME_DEFAULT_CONFIG
 ```
 
 ## Applictions
