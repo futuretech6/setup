@@ -155,3 +155,10 @@ curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/ke
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
 sudo apt-get update && sudo apt-get -y install glow
 ```
+
+## Starship
+
+```bash
+curl -sSf https://starship.rs/install.sh | sh -s -- -y
+echo 'eval "$(starship init bash)"' >> ~/.zshrc
+```
