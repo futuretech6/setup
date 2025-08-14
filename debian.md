@@ -100,6 +100,8 @@ Docker CE mirrors: [Tuna](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/),
 
 Docker Registry: https://status.daocloud.io/status/docker
 
+如果 `docker pull` 没问题但是 `docker compose build --pull` 不行，请尝试 `rm -rf ~/.docker/buildx/`
+
 ## Microsoft
 
 ```bash
