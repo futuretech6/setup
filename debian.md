@@ -80,7 +80,14 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # registry
-echo '{ "registry-mirrors": ["https://docker.m.daocloud.io"] }' | sudo tee /etc/docker/daemon.json
+sudo tee /etc/docker/daemon.json <<EOF
+{
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io",
+    "https://docker.1ms.run"
+  ]
+}
+EOF
 sudo systemctl daemon-reload && sudo systemctl restart docker
 
 # proxy
