@@ -112,7 +112,7 @@ sudo apt-get update
 sudo apt-get install -y firefox/mozilla  # not the snap version
 sudo apt-mark hold firefox               # fuck canonical and snap
 
-sudo apt upgrade firefox/mozilla && sudo apt-mark hold firefox/mozilla  # for upgradation
+sudo apt install firefox/mozilla && sudo apt-mark hold firefox/mozilla  # for upgradation
 ```
 
 **Brave**
