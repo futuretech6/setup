@@ -26,7 +26,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
-## Connection
+## Connectivity
 
 ```bash
 # registry
