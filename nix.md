@@ -13,7 +13,7 @@ sh <(curl --proto '=https' --tlsv1.2 -L https://mirrors.tuna.tsinghua.edu.cn/nix
 
 ```bash
 # 单独安装的 Nix
-sudo tee /etc/nix/nix.conf <<EOF
+sudo tee -a /etc/nix/nix.conf <<EOF
 substituters = https://mirror.sjtu.edu.cn/nix-channels/store https://cache.nixos.org
 EOF
 
@@ -36,4 +36,13 @@ EOF
 
 ```bash
 sudo systemctl restart nix-daemon
+```
+
+## Features
+
+```bash
+# 单独安装的 Nix
+sudo tee -a /etc/nix/nix.conf <<EOF
+experimental-features = nix-command flakes
+EOF
 ```
