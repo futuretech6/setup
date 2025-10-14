@@ -106,6 +106,8 @@ EOF
 
 ## user config
 
+https://github.com/rime/home/wiki/CustomizationGuide#定製指南
+
 ```bash
 export RIME_CONFIG_DIR=~/.config/fcitx/rime  # fcitx4
 export RIME_CONFIG_DIR=~/.local/share/fcitx5/rime  # fcitx5
