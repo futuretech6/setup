@@ -26,7 +26,8 @@ sudo sed -i.bak 's/vm\.swappiness\s*=\s*[0-9]*/vm.swappiness = 10/' /etc/sysctl.
 cat /proc/sys/vm/swappiness
 ```
 
-## nginx certificates
+<details>
+  <summary><h2>nginx certificates (deprecated)</h2></summary>
 
 ```bash
 # ZeroSSL verify (using apache)
@@ -39,6 +40,8 @@ sudo cp certificates/private.key /etc/ssl/private/private.key
 rm -rf certificates/
 sudo systemctl restart nginx.service
 ```
+
+</details>
 
 ## acme.sh
 
