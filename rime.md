@@ -78,7 +78,8 @@ EOF
 sudo apt-get install -y ibus  # need a front-end in host, using fcitx4(5) as front-end is horrible in Ubuntu 22.04
 flatpak install -y flathub org.fcitx.Fcitx5 && flatpak install -y flathub org.fcitx.Fcitx5.Addon.Rime
 curl -sSL https://raw.githubusercontent.com/rime/plum/master/rime-install \
-  | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime rime_dir=$HOME/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/ bash -s -- "iDvel/rime-ice:others/recipes/full"
+  | plum_dir=$HOME/.plum rime_frontend=fcitx5-rime rime_dir=$HOME/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/ \
+    bash -s -- "iDvel/rime-ice:others/recipes/full"
 
 im-config -n ibus
 
