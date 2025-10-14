@@ -107,12 +107,20 @@ EOF
 ## user config
 
 ```bash
-export RIME_DEFAULT_CONFIG=~/.config/fcitx/rime/default.yaml  # fcitx4
-export RIME_DEFAULT_CONFIG=~/.local/share/fcitx5/rime/default.yaml  # fcitx5
-export RIME_DEFAULT_CONFIG=~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime/default.yaml  # fcitx5 (flatpak)
+export RIME_CONFIG_DIR=~/.config/fcitx/rime  # fcitx4
+export RIME_CONFIG_DIR=~/.local/share/fcitx5/rime  # fcitx5
+export RIME_CONFIG_DIR=~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime  # fcitx5 (flatpak)
 
-sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' $RIME_DEFAULT_CONFIG
-sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' $RIME_DEFAULT_CONFIG
+# sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' $RIME_CONFIG_DIR/default.yaml
+# sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' $RIME_CONFIG_DIR/default.yaml
+
+cat > $RIME_CONFIG_DIR/default.custom.yaml <<EOF
+patch:
+  config_version: '$(date +"%Y-%m-%d")'
+  schema_list: [schema: rime_ice]
+  menu/page_size: 8
+  switcher/hotkeys: [F4]
+EOF
 ```
 
 ## Applictions
