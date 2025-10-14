@@ -121,6 +121,18 @@ patch:
   menu/page_size: 8
   switcher/hotkeys: [F4]
 EOF
+
+cat > $RIME_CONFIG_DIR/rime_ice.custom.yaml <<EOF
+patch:
+  speller/algebra/+:
+    - derive/ang$/an/
+    - derive/an$/ang/
+    - derive/eng$/en/
+    - derive/en$/eng/
+    - derive/in$/ing/
+    - derive/ing$/in/
+    - derive/ian$/iang/
+EOF
 ```
 
 ## Applictions
