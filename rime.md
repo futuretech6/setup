@@ -106,7 +106,8 @@ EOF
 
 ## user config
 
-https://github.com/rime/home/wiki/CustomizationGuide#定製指南
+- https://github.com/rime/home/wiki/UserGuide#同步用戶資料
+- https://github.com/rime/home/wiki/CustomizationGuide#定製指南
 
 ```bash
 export RIME_CONFIG_DIR=~/.config/fcitx/rime  # fcitx4
@@ -115,6 +116,8 @@ export RIME_CONFIG_DIR=~/.var/app/org.fcitx.Fcitx5/data/fcitx5/rime  # fcitx5 (f
 
 # sed -i -E 's/page_size:\s*[0-9]+/page_size: 8/' $RIME_CONFIG_DIR/default.yaml
 # sed -i 's/^\(\s*\)\(-\s*Control+grave\)/\1# \2/' $RIME_CONFIG_DIR/default.yaml
+
+echo "sync_dir: \"$HOME/OneDrive/linux-config/rime\"" >> $RIME_CONFIG_DIR/installation.yaml
 
 cat > $RIME_CONFIG_DIR/default.custom.yaml <<EOF
 patch:
