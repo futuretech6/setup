@@ -163,7 +163,7 @@ curl -sSf https://starship.rs/install.sh | sh -s -- -y
 echo 'eval "$(starship init bash)"' >> ~/.zshrc
 
 starship preset nerd-font-symbols -o ~/.config/starship.toml
-mkdir -p ~/.config && tee -a ~/.config/starship.toml <<EOF
+python <<EOF
 import toml  # pip install toml
 from pathlib import Path
 config_path = Path("~/.config/starship.toml").expanduser()
