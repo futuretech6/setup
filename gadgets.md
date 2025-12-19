@@ -164,16 +164,16 @@ echo 'eval "$(starship init bash)"' >> ~/.zshrc
 
 starship preset nerd-font-symbols -o ~/.config/starship.toml
 mkdir -p ~/.config && tee -a ~/.config/starship.toml <<EOF
-[os]
-disabled = false
-[sudo]
-disabled = false
-[status]
-disabled = false
-[time]
-disabled = false
-[memory_usage]
-disabled = false
-threshold = -1
+import toml  # pip install toml
+from pathlib import Path
+config_path = Path("~/.config/starship.toml").expanduser()
+with open(config_path, "r+") as f:
+    data = toml.load(f)
+    for key in {"memory_usage", "os", "sudo", "status", "time"}:
+        data.setdefault(key, {})["disabled"] = False
+    data["memory_usage"]["threshold"] = -1
+    f.seek(0)
+    f.truncate()
+    toml.dump(data, f)
 EOF
 ```
