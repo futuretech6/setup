@@ -163,18 +163,17 @@ curl -sSf https://starship.rs/install.sh | sh -s -- -y
 echo 'eval "$(starship init '$(basename $SHELL)')"' >> "$HOME/.$(basename $SHELL)rc"
 
 starship preset nerd-font-symbols -o ~/.config/starship.toml
+
 python <<EOF
-import toml  # pip install toml
+import toml
 from pathlib import Path
-config_path = Path("~/.config/starship.toml").expanduser()
-with open(config_path, "r+") as f:
-    data = toml.load(f)
-    for key in {"memory_usage", "os", "sudo", "status", "time"}:
-        data.setdefault(key, {})["disabled"] = False
-    data["memory_usage"]["threshold"] = -1
-    f.seek(0)
-    f.truncate()
-    toml.dump(data, f)
+p = Path("~/.config/starship.toml").expanduser()
+p.parent.mkdir(parents=True, exist_ok=True)
+data = toml.load(open(p)) if p.exists() else {}
+for k in ["memory_usage", "os", "sudo", "status", "time"]:
+    data.setdefault(k, {})["disabled"] = False
+data["memory_usage"]["threshold"] = -1
+toml.dump(data, open(p, "w"))
 EOF
 
 # nerd-fonts
