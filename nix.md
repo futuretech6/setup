@@ -46,3 +46,12 @@ sudo tee -a /etc/nix/nix.conf <<EOF
 experimental-features = nix-command flakes
 EOF
 ```
+
+## Use nix pkg as bin
+
+```bash
+alias gitui="nix run nixpkgs#gitui --"
+alias btm="nix run nixpkgs#bottom --"
+alias bat="nix run nixpkgs#bat --"
+alias erdtree="nix run nixpkgs#erdtree --"
+```
