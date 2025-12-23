@@ -20,6 +20,36 @@ locale-gen zh_CN.UTF-8
 sudo update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
 ```
 
+
+
+## bash-completion
+
+```bash
+# Config
+# sudo tee -a /etc/inputrc <<EOF
+cat << EOF > ~/.inputrc
+\$include /etc/inputrc
+set show-all-if-ambiguous On
+set completion-ignore-case On
+set colored-stats Off
+set colored-completion-prefix On
+set mark-directories On
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+EOF
+
+bind -f ~/.inputrc
+
+# Plugins
+mkdir -p ~/.bash_completion.d
+curl -L https://raw.githubusercontent.com/docker/cli/refs/heads/master/contrib/completion/bash/docker -o ~/.bash_completion.d/docker.sh
+cat << EOF >> ~/.bashrc
+if [ -f ~/.bash_completion.d/docker.sh ]; then
+    source ~/.bash_completion.d/docker.sh
+fi
+EOF
+```
+
 ## Rust
 
 ```bash
