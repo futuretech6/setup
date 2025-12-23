@@ -160,7 +160,7 @@ sudo apt-get update && sudo apt-get -y install glow
 
 ```bash
 curl -sSf https://starship.rs/install.sh | sh -s -- -y
-echo 'eval "$(starship init bash)"' >> ~/.zshrc
+echo 'eval "$(starship init '$(basename $SHELL)')"' >> ~/.zshrc
 
 starship preset nerd-font-symbols -o ~/.config/starship.toml
 python <<EOF
