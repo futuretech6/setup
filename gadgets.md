@@ -173,6 +173,8 @@ data = toml.load(open(p)) if p.exists() else {}
 for k in ["memory_usage", "os", "sudo", "status", "time"]:
     data.setdefault(k, {})["disabled"] = False
 data["memory_usage"]["threshold"] = -1
+data.setdefault("username", {})["show_always"] = True
+data.setdefault("hostname", {})["ssh_only"] = False
 toml.dump(data, open(p, "w"))
 EOF
 
