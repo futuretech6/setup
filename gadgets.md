@@ -176,4 +176,11 @@ with open(config_path, "r+") as f:
     f.truncate()
     toml.dump(data, f)
 EOF
+
+# nerd-fonts
+mkdir -p ~/.local/share/fonts/NerdFonts
+cd ~/.local/share/fonts/NerdFonts
+curl -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.tar.xz | tar -xJ
+fc-cache -fv
+fc-list | grep "Nerd"
 ```
