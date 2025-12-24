@@ -47,6 +47,20 @@ experimental-features = nix-command flakes
 EOF
 ```
 
+## Nixpkgs Mirrors
+
+https://mirrors.tuna.tsinghua.edu.cn/help/nix-channels/
+
+```bash
+# 单独安装的 Nix
+nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixpkgs-unstable nixpkgs
+nix-channel --update
+
+# NixOS
+nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-${VERSION} nixos
+nix-channel --update
+```
+
 ## Use nix pkg as bin
 
 ```bash
