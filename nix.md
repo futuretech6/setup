@@ -52,9 +52,12 @@ EOF
 https://mirrors.tuna.tsinghua.edu.cn/help/nix-channels/
 
 ```bash
-# 单独安装的 Nix
+# 单独安装的 Nix：Nix-Channel
 nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixpkgs-unstable nixpkgs
 nix-channel --update
+
+# 单独安装的 Nix：Flake
+nix registry add nixpkgs git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixpkgs-unstable
 
 # NixOS
 nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-${VERSION} nixos
