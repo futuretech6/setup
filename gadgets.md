@@ -170,7 +170,7 @@ from pathlib import Path
 p = Path("~/.config/starship.toml").expanduser()
 p.parent.mkdir(parents=True, exist_ok=True)
 data = toml.load(open(p)) if p.exists() else {}
-for k in ["memory_usage", "os", "sudo", "status", "time"]:
+for k in ["memory_usage", "os", "sudo", "status", "time", "git_metrics"]:
     data.setdefault(k, {})["disabled"] = False
 data["memory_usage"]["threshold"] = -1
 data.setdefault("username", {})["show_always"] = True
