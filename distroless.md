@@ -23,7 +23,7 @@ sudo update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
 sed -i "s/#[ \t]*alias /alias /g" "$HOME/.$(basename $SHELL)rc"
 
 # 实时更新 ~/.bash_history（仅用于 bash，zsh 等语法不同）
-cat << EOF >> ~/.bashrc
+cat <<"EOF" >> ~/.bashrc
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 shopt -s histappend
 EOF
