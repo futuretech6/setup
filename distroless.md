@@ -51,7 +51,7 @@ bind -f ~/.inputrc
 
 # Plugins
 mkdir -p ~/.bash_completion.d
-curl -L https://raw.githubusercontent.com/docker/cli/refs/heads/master/contrib/completion/bash/docker -o ~/.bash_completion.d/docker.sh
+curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker > ~/.bash_completion.d/docker.sh
 cat <<"EOF" >> ~/.bashrc
 if [ -f ~/.bash_completion.d/docker.sh ]; then
     source ~/.bash_completion.d/docker.sh
