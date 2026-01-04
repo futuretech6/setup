@@ -37,7 +37,7 @@ EOF
 # Config
 # sudo tee -a /etc/inputrc <<EOF
 cat << EOF > ~/.inputrc
-\$include /etc/inputrc
+\$include /etc/inputrc  # 若是添加到 /etc/inputrc 则删除这行
 set show-all-if-ambiguous On
 set completion-ignore-case On
 set colored-stats Off
