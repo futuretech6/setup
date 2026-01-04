@@ -50,13 +50,13 @@ EOF
 bind -f ~/.inputrc
 
 # Plugins
-mkdir -p ~/.bash_completion.d
-curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker > ~/.bash_completion.d/docker.sh
-cat <<"EOF" >> ~/.bashrc
-if [ -f ~/.bash_completion.d/docker.sh ]; then
-    source ~/.bash_completion.d/docker.sh
-fi
-EOF
+curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker | sudo tee /etc/bash_completion.d/docker
+mkdir -p ~/.bash_completion.d && curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker > ~/.bash_completion.d/docker.sh
+# cat <<"EOF" >> ~/.bashrc
+# if [ -f ~/.bash_completion.d/docker.sh ]; then
+#     source ~/.bash_completion.d/docker.sh
+# fi
+# EOF
 ```
 
 ## Rust
