@@ -8,9 +8,11 @@ Distro-irrelevant setup scripts for Linux.
 # omz
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # sh -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ohmyzsh/ohmyzsh@master/tools/install.sh)"  # cdn -> fastly
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-sed -i "s/plugins=(git)/plugins=(git docker docker-compose zsh-syntax-highlighting zsh-autosuggestions)/g" ~/.zshrc
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions \
+  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sed -iE "s/plugins=\([a-z ]+\)/plugins=(git docker docker-compose zsh-syntax-highlighting zsh-autosuggestions)/g" ~/.zshrc
 sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="ys"/' ~/.zshrc
 echo "source ~/.profile" >> ~/.zshrc
 echo "zstyle ':omz:update' mode auto" >> ~/.zshrc
@@ -50,8 +52,10 @@ EOF
 bind -f ~/.inputrc
 
 # Plugins
-curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker | sudo tee /etc/bash_completion.d/docker
-mkdir -p ~/.bash_completion.d && curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker > ~/.bash_completion.d/docker.sh
+curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker \
+  | sudo tee /etc/bash_completion.d/docker
+mkdir -p ~/.bash_completion.d && \
+  curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker > ~/.bash_completion.d/docker.sh
 # cat <<"EOF" >> ~/.bashrc
 # if [ -f ~/.bash_completion.d/docker.sh ]; then
 #     source ~/.bash_completion.d/docker.sh
