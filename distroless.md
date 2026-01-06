@@ -5,18 +5,6 @@ Distro-irrelevant setup scripts for Linux.
 ## Generic
 
 ```bash
-# omz
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# sh -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ohmyzsh/ohmyzsh@master/tools/install.sh)"  # cdn -> fastly
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions \
-  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-sed -iE "s/plugins=\([a-z ]+\)/plugins=(git docker docker-compose zsh-syntax-highlighting zsh-autosuggestions)/g" ~/.zshrc
-sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="ys"/' ~/.zshrc
-echo "source ~/.profile" >> ~/.zshrc
-echo "zstyle ':omz:update' mode auto" >> ~/.zshrc
-
 # locale for zh_CN
 locale-gen zh_CN.UTF-8
 sudo update-locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
@@ -30,8 +18,6 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 shopt -s histappend
 EOF
 ```
-
-
 
 ## bash-completion
 
@@ -68,6 +54,24 @@ if [ -d ~/.bash_completion.d ]; then
 fi
 EOF
 ```
+
+<details>
+  <summary><h2>omz</h2></summary>
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ohmyzsh/ohmyzsh@master/tools/install.sh)"  # cdn -> fastly
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions \
+  ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sed -iE "s/plugins=\([a-z ]+\)/plugins=(git docker docker-compose zsh-syntax-highlighting zsh-autosuggestions)/g" ~/.zshrc
+sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="ys"/' ~/.zshrc
+echo "source ~/.profile" >> ~/.zshrc
+echo "zstyle ':omz:update' mode auto" >> ~/.zshrc
+```
+
+</details>
 
 ## Rust
 
