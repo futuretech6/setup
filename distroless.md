@@ -56,7 +56,7 @@ mkdir -p ~/.bash_completion.d
 curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker \
   | tee ~/.bash_completion.d/docker
 curl https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/completions/tmux \
-  | tee ~/.bash_completion.d/tmux.bash  # bash-completion 中的太新了
+  | tee ~/.bash_completion.d/tmux.bash  # bash-completion 仓库中的与旧版 bash-completion 不兼容
 
 cat <<"EOF" >> ~/.bashrc
 if [ -d ~/.bash_completion.d ]; then
