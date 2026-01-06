@@ -51,16 +51,22 @@ EOF
 
 bind -f ~/.inputrc
 
-# Plugins
+# Plugins 也可写入 `/etc/bash_completion.d/`
+mkdir -p ~/.bash_completion.d
 curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker \
-  | sudo tee /etc/bash_completion.d/docker
-mkdir -p ~/.bash_completion.d && \
-  curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker > ~/.bash_completion.d/docker.sh
-# cat <<"EOF" >> ~/.bashrc
-# if [ -f ~/.bash_completion.d/docker.sh ]; then
-#     source ~/.bash_completion.d/docker.sh
-# fi
-# EOF
+  | tee ~/.bash_completion.d/docker
+curl https://raw.githubusercontent.com/scop/bash-completion/main/completions-core/tmux.bash \
+  | tee ~/.bash_completion.d/tmux.bash
+
+cat <<"EOF" >> ~/.bashrc
+if [ -d ~/.bash_completion.d ]; then
+    for file in ~/.bash_completion.d/*; do
+        if [ -f "$file" ] && [ -r "$file" ]; then
+            source "$file"
+        fi
+    done
+fi
+EOF
 ```
 
 ## Rust
