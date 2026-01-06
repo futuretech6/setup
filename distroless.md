@@ -55,8 +55,8 @@ bind -f ~/.inputrc
 mkdir -p ~/.bash_completion.d
 curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker \
   | tee ~/.bash_completion.d/docker
-curl https://raw.githubusercontent.com/scop/bash-completion/main/completions-core/tmux.bash \
-  | tee ~/.bash_completion.d/tmux.bash
+curl https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/completions/tmux \
+  | tee ~/.bash_completion.d/tmux.bash  # bash-completion 中的太新了
 
 cat <<"EOF" >> ~/.bashrc
 if [ -d ~/.bash_completion.d ]; then
