@@ -93,9 +93,25 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y  # disab
 cargo install gitui bottom bat erdtree mdcat  # needs cc, make, pkg-config, libssl-dev
 ```
 
-`vim ~/.cargo/config.toml`
+```bash
+cat << EOF | tee ${CARGO_HOME:-$HOME/.cargo}/config.toml
+# sparse requiring rust >= 1.68.0
+[source.crates-io]
+replace-with = 'ustc'
 
-https://github.com/futuretech6/dotfiles/blob/master/rust/config.toml
+[source.aliyun]
+registry = "sparse+https://mirrors.aliyun.com/crates.io-index/"
+
+[source.ustc]
+registry = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
+
+[source.sjtu]
+registry = "sparse+https://mirrors.sjtug.sjtu.edu.cn/crates.io-index/"
+
+[registries.ustc]
+index = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
+EOF
+```
 
 ## NodeJs
 
