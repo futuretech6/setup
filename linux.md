@@ -114,3 +114,11 @@ sudo apt-get update && sudo apt-get install cloudflared
 # WSL2
 echo "export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH" >> ~/.profile
 ```
+
+## WSL NFS Mount
+
+https://github.com/microsoft/WSL/issues/12508#issuecomment-2764782989
+
+```bash
+sudo mount -t nfs -o noresvport -a --verbose
+```
