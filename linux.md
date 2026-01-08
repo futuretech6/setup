@@ -121,4 +121,14 @@ https://github.com/microsoft/WSL/issues/12508#issuecomment-2764782989
 
 ```bash
 sudo mount -t nfs -o noresvport -a --verbose
+
+# 写到 /etc/fstab 里
+192.168.1.100:/data /mnt/nfs nfs defaults,noresvport,proto=tcp,nolock,_netdev,x-systemd.automount 0 0
 ```
+
+- `noresvport`：强制使用非保留端口（1024 以上），解决 WSL 权限不足无法使用低位端口的问题。
+- `proto=tcp`：在 WSL 环境下，TCP 比 UDP 更稳定。
+- `nolock`：禁用文件锁协议（NLM）。WSL2 的网络架构有时无法很好地处理 NFS 锁，不加这个参数可能会导致挂载时卡住或应用报错。
+- `defaults`：包含一组默认选项（如 `rw`, `suid`, `dev`, `exec`, `auto`, `nouser`, `async`）。
+- `_netdev`：告诉系统这是一个网络设备，等待网络就绪后再挂载。
+- `x-systemd.automount`：当你第一次访问该目录时才真正触发挂载，这在 WSL 环境下非常有效，能避免因启动顺序导致的挂载超时。
