@@ -164,12 +164,15 @@ echo 'eval "$(starship init '$(basename $SHELL)')"' >> "$HOME/.$(basename $SHELL
 
 starship preset nerd-font-symbols -o ~/.config/starship.toml
 
-python <<EOF
+python <<'EOF'
 import toml
 from pathlib import Path
 p = Path("~/.config/starship.toml").expanduser()
 p.parent.mkdir(parents=True, exist_ok=True)
 data = toml.load(open(p)) if p.exists() else {}
+data["$schema"] = "https://starship.rs/config-schema.json"
+data["scan_timeout"] = 1000
+data["command_timeout"] = 1000
 for k in ["memory_usage", "os", "sudo", "status", "time", "git_metrics"]:
     data.setdefault(k, {})["disabled"] = False
 data["memory_usage"]["threshold"] = -1
