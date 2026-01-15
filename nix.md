@@ -69,7 +69,7 @@ nix-channel --update
 ```bash
 # 安装
 nix profile install ...  # old version
-nix profile add nixpkgs#gitui nixpkgs#bottom nixpkgs#bat nixpkgs#erdtree nixpkgs#pre-commit nixpkgs#autojump nixpkgs#dust
+nix profile add nixpkgs#gitui nixpkgs#bottom nixpkgs#bat nixpkgs#erdtree nixpkgs#pre-commit nixpkgs#autojump nixpkgs#dust github:NixOS/nixpkgs/nixos-23.05#nodePackages.prettier
 tee -a ~/.$(basename $SHELL)rc <<"EOF"
 if [ -f "$HOME/.nix-profile/etc/profile.d/autojump.sh" ]; then
     . "$HOME/.nix-profile/etc/profile.d/autojump.sh"
@@ -84,6 +84,7 @@ alias bat="nix run nixpkgs#bat --"
 alias erdtree="nix run nixpkgs#erdtree --"
 alias pre-commit="nix run nixpkgs#pre-commit --"
 alias dust="nix run nixpkgs#dust --"
+alias prettier="nix run github:NixOS/nixpkgs/nixos-23.05#nodePackages.prettier --"
 export PATH=$(nix build --no-link --print-out-paths nixpkgs#autojump 2>/dev/null)/bin:$PATH
 . $(nix build --no-link --print-out-paths nixpkgs#autojump 2>/dev/null)/etc/profile.d/autojump.sh
 EOF
