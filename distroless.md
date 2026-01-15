@@ -45,6 +45,9 @@ curl https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/com
   | tee ~/.bash_completion.d/tmux.bash  # bash-completion 仓库中的与旧版 bash-completion 不兼容
 curl https://raw.githubusercontent.com/futuretech6/pre-commit-bash-completion/master/pre-commit.sh \
   | tee ~/.bash_completion.d/pre-commit.sh
+# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash \
+#   | tee ~/.bash_completion.d/git-completion.bash
+echo "export GIT_COMPLETION_SHOW_ALL=1" | tee ~/.bash_completion.d/git-extra.sh  # show "--allow-empty" etc.
 rustup completions bash | tee ~/.bash_completion.d/rustup
 rustup completions bash cargo | tee ~/.bash_completion.d/cargo
 
