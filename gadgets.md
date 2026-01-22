@@ -176,6 +176,7 @@ data["command_timeout"] = 1000
 for k in ["memory_usage", "os", "sudo", "status", "time", "git_metrics"]:
     data.setdefault(k, {})["disabled"] = False
 data["memory_usage"]["threshold"] = -1
+data["memory_usage"]["format"] = "via $symbol [RAM: ${ram_pct}( | SWAP: ${swap_pct})]($style) "
 data.setdefault("username", {})["show_always"] = True
 data.setdefault("hostname", {})["ssh_only"] = False
 toml.dump(data, open(p, "w"))
