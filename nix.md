@@ -6,6 +6,9 @@ https://nixos.org/download/
 
 ```bash
 sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
+```
+
+```bash
 sh <(curl --proto '=https' --tlsv1.2 -L https://mirrors.tuna.tsinghua.edu.cn/nix/latest/install) --daemon
 ```
 
@@ -16,7 +19,9 @@ sh <(curl --proto '=https' --tlsv1.2 -L https://mirrors.tuna.tsinghua.edu.cn/nix
 sudo tee -a /etc/nix/nix.conf <<EOF
 substituters = https://mirror.sjtu.edu.cn/nix-channels/store https://cache.nixos.org
 EOF
+```
 
+```bash
 # NixOS
 sudo tee /etc/nixos/configuration.nix <<EOF
 { config, lib, pkgs, ... }:
@@ -24,7 +29,9 @@ sudo tee /etc/nixos/configuration.nix <<EOF
   nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
 }
 EOF
+```
 
+```bash
 # nix-darwin
 tee $HOME/.nixpkgs/darwin-configuration.nix <<EOF
 { config, lib, pkgs, ... }:
@@ -55,10 +62,14 @@ https://mirrors.tuna.tsinghua.edu.cn/help/nix-channels/
 # 单独安装的 Nix：Nix-Channel
 nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixpkgs-unstable nixpkgs
 nix-channel --update
+```
 
+```bash
 # 单独安装的 Nix：Flake
 nix registry add nixpkgs git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixpkgs-unstable
+```
 
+```bash
 # NixOS
 nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-${VERSION} nixos
 nix-channel --update
@@ -75,7 +86,9 @@ if [ -f "$HOME/.nix-profile/etc/profile.d/autojump.sh" ]; then
     . "$HOME/.nix-profile/etc/profile.d/autojump.sh"
 fi
 EOF
+```
 
+```bash
 # 一次性
 tee -a ~/.$(basename $SHELL)rc <<"EOF"
 alias gitui="nix run nixpkgs#gitui --"
