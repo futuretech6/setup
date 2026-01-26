@@ -55,14 +55,18 @@ sudo apt-get install -y clangd-$LLVM_VERSION clang-format-$LLVM_VERSION clang-ti
 ```bash
 sudo apt-get install -y wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /etc/apt/keyrings/packages.microsoft.gpg
+```
 
+```bash
 # edge
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/packages.microsoft.gpg] \
       https://packages.microsoft.com/repos/edge stable main" | \
     sudo tee /etc/apt/sources.list.d/microsoft-edge.list
 sudo apt-get update
 sudo apt-get install -y microsoft-edge-stable
+```
 
+```bash
 # vscode
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/packages.microsoft.gpg] \
       https://packages.microsoft.com/repos/code stable main" | \
