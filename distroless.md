@@ -36,7 +36,9 @@ set mark-directories On
 EOF
 
 bind -f ~/.inputrc
+```
 
+```bash
 # Plugins 也可写入 `/etc/bash_completion.d/`
 mkdir -p ~/.bash_completion.d
 curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker \
@@ -50,7 +52,9 @@ curl https://raw.githubusercontent.com/futuretech6/pre-commit-bash-completion/ma
 echo "export GIT_COMPLETION_SHOW_ALL=1" | tee ~/.bash_completion.d/git-extra.sh  # show "--allow-empty" etc.
 rustup completions bash | tee ~/.bash_completion.d/rustup
 rustup completions bash cargo | tee ~/.bash_completion.d/cargo
+```
 
+```bash
 cat <<"EOF" >> ~/.bashrc
 if [ -d ~/.bash_completion.d ]; then
     for file in ~/.bash_completion.d/*; do
@@ -85,7 +89,9 @@ echo "zstyle ':omz:update' mode auto" >> ~/.zshrc
 ```bash
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+```
 
+```bash
 export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 ```
@@ -156,7 +162,9 @@ go env -w GOPROXY=https://goproxy.io,direct
 ```bash
 # [optional] pypi mirror
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple  # needs pip >=10.0.0
+```
 
+```bash
 # conda mirror https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/?C=M&O=D
 wget ...
 bash ...
