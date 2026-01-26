@@ -161,9 +161,13 @@ sudo apt-get update && sudo apt-get -y install glow
 ```bash
 curl -sSf https://starship.rs/install.sh | sh -s -- -y
 echo 'eval "$(starship init '$(basename $SHELL)')"' >> "$HOME/.$(basename $SHELL)rc"
+```
 
+```bash
 starship preset nerd-font-symbols -o ~/.config/starship.toml
+```
 
+```bash
 python <<'EOF'
 import toml
 from pathlib import Path
@@ -181,7 +185,9 @@ data.setdefault("username", {})["show_always"] = True
 data.setdefault("hostname", {})["ssh_only"] = False
 toml.dump(data, open(p, "w"))
 EOF
+```
 
+```bash
 # nerd-fonts
 mkdir -p ~/.local/share/fonts/NerdFonts
 cd ~/.local/share/fonts/NerdFonts
