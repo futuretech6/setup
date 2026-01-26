@@ -75,6 +75,13 @@ nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-${VERS
 nix-channel --update
 ```
 
+## Use home-manager
+
+```bash
+git clone https://github.com/futuretech6/nix-config.git ~/.config/home-manager
+nix run home-manager/master -- switch --flake ~/.config/home-manager#$(users)
+```
+
 ## Use nix pkg as bin
 
 ```bash
