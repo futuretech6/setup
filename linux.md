@@ -3,9 +3,12 @@
 ## ulimit
 
 ```bash
-# open files limit
-ulimit -n 4096  # tmp
-echo "ulimit -n 4096" >> ~/.profile  # persistent
+sudo tee /etc/security/limits.d/99-open-files.conf <<EOF
+* soft nofile 65535
+* hard nofile 65535
+root soft nofile 65535
+root hard nofile 65535
+EOF
 ```
 
 ## swap
