@@ -77,10 +77,7 @@ nix-channel --update
 
 ## Use home-manager
 
-```bash
-git clone https://github.com/futuretech6/nix-config.git ~/.config/home-manager
-nix run home-manager/master -- switch --flake ~/.config/home-manager#$(users)
-```
+https://github.com/futuretech6/nix-config#usage
 
 ## Use nix pkg as bin
 
