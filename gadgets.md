@@ -158,6 +158,8 @@ sudo apt-get update && sudo apt-get -y install glow
 
 ## Starship
 
+现已加入 nix-config
+
 ```bash
 curl -sSf https://starship.rs/install.sh | sh -s -- -y
 echo 'eval "$(starship init '$(basename $SHELL)')"' >> "$HOME/.$(basename $SHELL)rc"
