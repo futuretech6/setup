@@ -19,6 +19,15 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
+```bash
+# rhel
+export DOCKER_CE=https://mirrors.ustc.edu.cn/docker-ce/
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager --add-repo ${DOCKER_CE}/linux/rhel/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl enable --now docker
+```
+
 ## Post-Installation
 
 ```bash
