@@ -18,6 +18,7 @@ sh <(curl --proto '=https' --tlsv1.2 -L https://mirrors.tuna.tsinghua.edu.cn/nix
 # 单独安装的 Nix
 sudo tee -a /etc/nix/nix.conf <<EOF
 substituters = https://mirror.sjtu.edu.cn/nix-channels/store https://cache.nixos.org
+trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
 EOF
 ```
 
