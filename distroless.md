@@ -41,8 +41,9 @@ bind -f ~/.inputrc
 ```bash
 # Plugins 也可写入 `/etc/bash_completion.d/`
 mkdir -p ~/.bash_completion.d
-curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker \
-  | tee ~/.bash_completion.d/docker
+# curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker \
+#   | tee ~/.bash_completion.d/docker
+docker completion bash > ~/.bash_completion.d/docker
 curl https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/completions/tmux \
   | tee ~/.bash_completion.d/tmux.bash  # bash-completion 仓库中的与旧版 bash-completion 不兼容
 curl https://raw.githubusercontent.com/futuretech6/pre-commit-bash-completion/master/pre-commit.sh \
