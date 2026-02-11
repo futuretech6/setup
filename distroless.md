@@ -40,6 +40,7 @@ bind -f ~/.inputrc
 
 ```bash
 # Plugins 也可写入 `/etc/bash_completion.d/`
+rm -rf ~/.bash_completion.d
 mkdir -p ~/.bash_completion.d
 # curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker \
 #   | tee ~/.bash_completion.d/docker
