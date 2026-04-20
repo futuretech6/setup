@@ -152,3 +152,12 @@ EOF
 2. 如果是 Gnome，可以安装插件 [Input Method Panel](https://extensions.gnome.org/extension/261/kimpanel/)
 
 仍有问题：`fcitx5-diagnose` 或 `flatpak run --command=fcitx5-diagnose org.fcitx.Fcitx5`
+
+**Flatpak 应用无法使用**
+
+```bash
+# 不写包名则是全局
+flatpak override --user --env=GTK_IM_MODULE=fcitx com.tencent.WeChat
+flatpak override --user --env=QT_IM_MODULE=fcitx com.tencent.WeChat
+flatpak override --user --env=XMODIFIERS=@im=fcitx com.tencent.WeChat
+```
