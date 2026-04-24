@@ -104,6 +104,7 @@ alias pre-commit="nix run nixpkgs#pre-commit --"
 alias dust="nix run nixpkgs#dust --"
 alias prettier="nix run github:NixOS/nixpkgs/nixos-23.05#nodePackages.prettier --"
 alias yq="nix run nixpkgs#yq-go --"
+alias claude="nix run nixpkgs#claude-code --impure --"
 export PATH=$(nix build --no-link --print-out-paths nixpkgs#autojump 2>/dev/null)/bin:$PATH
 . $(nix build --no-link --print-out-paths nixpkgs#autojump 2>/dev/null)/etc/profile.d/autojump.sh
 EOF
