@@ -76,6 +76,22 @@ nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-${VERS
 nix-channel --update
 ```
 
+## nix-daemon proxy
+
+```bash
+sudo mkdir /run/systemd/system/nix-daemon.service.d/
+sudo tee -a /run/systemd/system/nix-daemon.service.d/override.conf << EOF
+[Service]
+Environment="http_proxy=http://127.0.0.1:17890"
+Environment="https_proxy=http://127.0.0.1:17890"
+Environment="all_proxy=http://127.0.0.1:17890"
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart nix-daemon
+
+systemctl cat nix-daemon
+```
+
 ## Use home-manager
 
 https://github.com/futuretech6/nix-config#usage
