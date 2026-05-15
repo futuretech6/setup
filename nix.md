@@ -80,7 +80,7 @@ nix-channel --update
 
 ```bash
 sudo mkdir /run/systemd/system/nix-daemon.service.d/
-sudo tee -a /run/systemd/system/nix-daemon.service.d/override.conf << EOF
+sudo tee /run/systemd/system/nix-daemon.service.d/override.conf << EOF
 [Service]
 Environment="http_proxy=http://127.0.0.1:17890"
 Environment="https_proxy=http://127.0.0.1:17890"
