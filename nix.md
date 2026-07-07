@@ -53,6 +53,9 @@ sudo systemctl restart nix-daemon
 sudo tee -a /etc/nix/nix.conf <<EOF
 experimental-features = nix-command flakes
 EOF
+
+# 其他可以走用户级方案
+echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 ```
 
 ## Nixpkgs Mirrors
