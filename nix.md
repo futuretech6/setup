@@ -130,3 +130,10 @@ export PATH=$(nix build --no-link --print-out-paths nixpkgs#autojump 2>/dev/null
 . $(nix build --no-link --print-out-paths nixpkgs#autojump 2>/dev/null)/etc/profile.d/autojump.sh
 EOF
 ```
+
+## macOS chsh
+
+```bash
+echo $HOME/.nix-profile/bin/bash | sudo tee -a /etc/shells
+chsh -s $HOME/.nix-profile/bin/bash
+```
